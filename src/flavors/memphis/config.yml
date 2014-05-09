@@ -1,11 +1,11 @@
 # Settings for the app
 app:
   # HTML Title
-  title: Shareabouts
+  title: Create Memphis
   # Header name
-  name: Shareabouts
+  name: Create Memphis
   # Meta description that will show up in Google search results
-  meta_description: _(Shareabouts is a mapping tool to gather crowd sourced public input. Use it to collect suggested locations and comments in a social, engaging process.)
+  meta_description: _(Share your idea to create something great for Memphis!)
 
   # When the map loads, existing places will be loaded in chunks. By default,
   # the size of the chunks will be a reasonable default dictated by the API
@@ -21,128 +21,63 @@ map:
   geolocation_onload: false
   options:
     center:
-      lat: 39.9523524
-      lng: -75.1636075
-    zoom: 14
+      lat: 35.139989307533234
+      lng: -90.00228820717894
+    zoom: 12
     minZoom: 10
     maxZoom: 17
   layers:
     - url: http://{s}.tiles.mapbox.com/v3/openplans.map-dmar86ym/{z}/{x}/{y}.png
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
-    - url: /static/data/philadelphia.geojson
-      type: json
-      rules:
-        - condition: 'true'
-          style:
-            color: "#444"
-            opacity: 0.6
-            fillOpacity: 0.1
-            weight: 1
 
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  landmark:
-    label: _(Landmark)
+  new:
+    label: _(New ideas)
     rules:
-      - condition: '"{{location_type}}" === "landmark" && {{map.zoom}} < 13 && {{layer.focused}} === false'
-        # Display landmarks as circles (vectors) when zoomed out
-
-        style:
-          color: '#0d85e9'
-          radius: 3
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 1
-
-      - condition: '"{{location_type}}" === "landmark" && {{map.zoom}} >= 13 && {{layer.focused}} === false'
-        # Display landmarks as icons when zoomed in
-
+      - condition: '"{{location_type}}" === "new" && {{layer.focused}} === false'
         icon:
           iconUrl: /static/css/images/markers/dot-0d85e9.png
           iconSize: [17, 18]
           iconAnchor: [9, 9]
-
-      - condition: '"{{location_type}}" === "landmark" && {{layer.focused}} === true'
-        # Display landmarks as icons when zoomed in
-
+      - condition: '"{{location_type}}" === "new" && {{layer.focused}} === true'
         icon:
           iconUrl: /static/css/images/markers/marker-0d85e9.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
-
-  park:
-    label: _(Park)
+  funding:
+    label: _(Projects that need funding now)
     rules:
-      - condition: '"{{location_type}}" === "park" && {{layer.focused}}'
-        # Show parks that are points as icons...
-
+      - condition: '"{{location_type}}" === "funding" && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/marker-4bbd45.png
+          iconUrl: /static/css/images/markers/dot-0d85e9.png
+          iconSize: [17, 18]
+          iconAnchor: [9, 9]
+      - condition: '"{{location_type}}" === "funding" && {{layer.focused}} === true'
+        icon:
+          iconUrl: /static/css/images/markers/marker-0d85e9.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
-
-        # ...and parks that are polygons as shapes.
-
-        style:
-          color: '#4bbd45'
-          weight: 3
-          opacity: 0.9
-          fillOpacity: 0.7
-
-      - condition: '"{{location_type}}" === "park"'
-        # Show parks that are points as icons...
-
+  underway:
+    label: _(Projects that need funding now)
+    rules:
+      - condition: '"{{location_type}}" === "underway" && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/markers/dot-4bbd45.png
+          iconUrl: /static/css/images/markers/dot-0d85e9.png
           iconSize: [17, 18]
           iconAnchor: [9, 9]
-
-        # ...and parks that are polygons as shapes.
-
-        style:
-          color: '#4bbd45'
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.4
-
-  school:
-    label: _(School)
-    rules:
-      - condition: '"{{location_type}}" === "school" && {{submission_sets.comments.length}} > 0'
-        # Display schools as circles
-
-        style:
-          color: '#f95016'
-          radius: 8
-          weight: 4
-          opacity: 0.9
-          fillOpacity: 0.4
-        focus_style:
-          color: '#f95016'
-          radius: 16
-          weight: 4
-          opacity: 0.9
-          fillOpacity: 0.4
-
-      - condition: '"{{location_type}}" === "school"'
-        style:
-          color: '#f95016'
-          radius: 8
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.4
-        focus_style:
-          color: '#f95016'
-          radius: 16
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.4
-
+      - condition: '"{{location_type}}" === "underway" && {{layer.focused}} === true'
+        icon:
+          iconUrl: /static/css/images/markers/marker-0d85e9.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
 
 activity:
   # Optional. Activity is supported by default. Set to false to disable.
@@ -162,6 +97,11 @@ place:
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
   items:
+    - type: hidden
+      name: location_type
+      attrs:
+      - key: value
+        value: new
     - prompt: _(Your Name)
       type: text
       name: submitter_name
@@ -171,6 +111,31 @@ place:
           value: _(Name)
         - key: size
           value: 30
+    - prompt: _(Project title)
+      type: text
+      name: name
+      attrs:
+        - key: size
+          value: 30
+        - key: required
+    - prompt: _(Add an image!)
+      inputfile_label: _(Upload)
+      type: file
+      name: my_image
+      optional: true
+      attrs:
+        - key: accept
+          value: image/*
+    - prompt: _(My idea to Create Memphis is...)
+      type: textarea
+      name: description
+      attrs:
+        - key: required
+    - prompt: _(The result would be...)
+      type: textarea
+      name: description
+      attrs:
+        - key: required
     - prompt: _(Your Email)
       type: text
       name: private-submitter_email
@@ -180,44 +145,39 @@ place:
           value: _(Email address)
         - key: size
           value: 30
-    - prompt: _(Location Name)
+    - prompt: _(Phone (optional))
       type: text
-      name: name
-      attrs:
-        - key: placeholder
-          value: _(Location Name)
-        - key: size
-          value: 30
-        - key: required
-    - prompt: _(Location Type)
+      name: private-phone
+    - prompt: _(Are you committed to helping make this happen?)
       type: select
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Landmark)
-          value: landmark
-        - label: _(Park)
-          value: park
-        - label: _(School)
-          value: school
-      name: location_type
-      attrs:
-        - key: required
-    - prompt: _(Description)
-      type: textarea
-      name: description
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Description...)
-    - prompt: _(Image)
-      inputfile_label: _(Add an Image)
-      type: file
-      name: my_image
-      optional: true
-      attrs:
-        - key: accept
-          value: image/*
+        - label: _(Yes)
+          value: yes
+        - label: _(No)
+          value: no
+      name: private-committed
+    - prompt: _(Do you live in the neighborhood where you’re proposing the idea?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Yes)
+          value: yes
+        - label: _(No)
+          value: no
+      name: private-neighborhood
+    - prompt: _(Do you have any questions about how to turn your idea into reality?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Yes)
+          value: yes
+        - label: _(No)
+          value: no
+      name: private-questions
 
 survey:
   submission_type: comments
@@ -256,25 +216,21 @@ pages:
   - title: _(About)
     slug: about
     name: overview
-    # start_page: true
+    start_page: true
 
-  - title: _(Why Shareabouts?)
+  - title: _(FAQ)
     slug: why
-    url: /static/pages/why.html
+    url: why
 
-  - title: _(Features)
-    slug: features
-    url: /static/pages/features.html
-
-  - title: _(Links)
+  - title: _(Filter places)
     pages:
-      - title: _(Documentation)
+      - title: _( )
         external: true
         url: https://github.com/openplans/shareabouts/tree/master/doc
-      - title: _(Issues)
+      - title: _( )
         external: true
         url: https://github.com/openplans/shareabouts/issues
-      - title: _(GitHub)
+      - title: _( )
         external: true
         url: https://github.com/openplans/shareabouts
 
