@@ -135,7 +135,12 @@ textarea:focus {
 }
 #site-title {
   font-family: 'Kreon', serif;
+  font-size: 0.75em;
   text-shadow: none;
+}
+#site-title a:link,
+#site-title a:visited {
+  line-height: 1.75;
 }
 #site-title a:link, 
 #site-title a:visited  {
@@ -145,9 +150,10 @@ textarea:focus {
 /* Navigation */
 #nav-btn {
   font-family: "Helvetica Neue", Arial !important;
-  background-color: #5B3957;
+  background-color: transparent;
   color: #001A45;
   text-shadow: -1px 1px rgba(255,255,255,0.1);
+  width: 1em;
 }
 
 
@@ -274,6 +280,13 @@ a.close-btn {
 }
 
 @media only screen and (min-width: 60em) {
+  #site-title {
+    font-size: 1em;
+  }
+  #site-title a:link,
+  #site-title a:visited {
+    line-height: 1.375;
+  }
   #add-place-btn-container {
     background-color: transparent;
     box-shadow: none;
