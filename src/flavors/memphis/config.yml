@@ -64,7 +64,7 @@ place_types:
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
   underway:
-    label: _(Projects that need funding now)
+    label: _(Projects underway)
     rules:
       - condition: '"{{location_type}}" === "underway" && {{layer.focused}} === false'
         icon:
@@ -89,11 +89,10 @@ place:
   adding_supported: true
   add_button_label: _(Add a Place)
   # Labels for the buttons that toggle the map and list views
-  show_list_button_label: _(List All Places)
-  show_map_button_label: _(Show the Map)
-  action_text: _(added)
+  show_list_button_label: _(Show as list)
+  show_map_button_label: _(Show on map)
   title: _(Tell us more...)
-  action_text: _(created)
+  action_text: _(suggested)
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
   items:
@@ -128,23 +127,21 @@ place:
           value: image/*
     - prompt: _(My idea to Create Memphis is...)
       type: textarea
-      name: description
+      name: idea-description
       attrs:
         - key: required
     - prompt: _(The result would be...)
       type: textarea
-      name: description
+      name: idea-result
       attrs:
         - key: required
     - prompt: _(Your Email)
       type: text
       name: private-submitter_email
-      optional: true
       attrs:
-        - key: placeholder
-          value: _(Email address)
         - key: size
           value: 30
+        - key: required
     - prompt: _(Phone (optional))
       type: text
       name: private-phone
@@ -200,9 +197,14 @@ survey:
       name: comment
       attrs:
         - key: required
-    - prompt: _(Your Name)
+    - prompt: _(Your name)
       type: text
       name: submitter_name
+    - prompt: _(Your Email)
+      type: text
+      name: private-submitter_email
+      attrs:
+        - key: required
 
 support:
   submission_type: support
@@ -224,15 +226,15 @@ pages:
 
   - title: _(Filter places)
     pages:
-      - title: _( )
+      - title: _(New ideas)
+        url: /filter/new
         external: true
-        url: https://github.com/openplans/shareabouts/tree/master/doc
-      - title: _( )
+      - title: _(Needing funding)
+        url: /filter/funding
         external: true
-        url: https://github.com/openplans/shareabouts/issues
-      - title: _( )
+      - title: _(Underway)
+        url: /filter/underway
         external: true
-        url: https://github.com/openplans/shareabouts
 
 notifications:
   on_new_place: true
