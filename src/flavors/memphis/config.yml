@@ -110,7 +110,7 @@ place:
           value: _(Name)
         - key: size
           value: 30
-    - prompt: _(Project title)
+    - prompt: _(Project Title)
       type: text
       name: name
       attrs:
@@ -144,6 +144,7 @@ place:
         - key: required
     - prompt: _(Phone (optional))
       type: text
+      optional: true
       name: private-phone
     - prompt: _(Are you committed to helping make this happen?)
       type: select

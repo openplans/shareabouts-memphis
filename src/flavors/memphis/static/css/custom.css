@@ -96,10 +96,23 @@ a:hover {
   color: #fff;
 }
 
-#place-form label {
+#place-form label,
+.survey-field label {
   color: #bbb;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.77);
   display: block;
+  font-size: 1em;
+  text-transform: none;
+  margin-bottom: 0.5em;
+}
+.survey-field {
+  padding-bottom: 0.75em;
+}
+#place-form label small {
+  color: rgba(255,255,255,0.5);
+}
+.or-sign-in {
+  color: rgba(255,255,255,0.77);
 }
 #place-form p.file label {
   display: inline;
@@ -237,6 +250,19 @@ a.close-btn {
   color: #E9BA83;
   font-weight: bold;
   text-shadow: none;
+}
+
+.response-body {
+  border: 0;
+  background: #fff;
+  color: #001A45;
+}
+.response-body:after {
+  border-top-color: #fff;
+}
+.response-date {
+  color: #fff;
+  color: rgba(255,255,255,0.77);
 }
 
 
