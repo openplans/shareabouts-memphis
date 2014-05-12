@@ -37,47 +37,53 @@ place_types:
     label: _(New ideas)
     rules:
       - condition: '"{{location_type}}" === "new" && {{layer.focused}} === false'
-        icon:
-          iconUrl: /static/css/images/markers/dot-0d85e9.png
-          iconSize: [17, 18]
-          iconAnchor: [9, 9]
+        style:
+          color: '#565EAA'
+          radius: 8
+          weight: 3
+          opacity: 0.9
+          fillOpacity: 0.7
       - condition: '"{{location_type}}" === "new" && {{layer.focused}} === true'
-        icon:
-          iconUrl: /static/css/images/markers/marker-0d85e9.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25, 41]
-          shadowSize: [41, 41]
-          iconAnchor: [12, 41]
+        style:
+          color: '#565EAA'
+          radius: 16
+          weight: 5
+          opacity: 1
+          fillOpacity: .9
   funding:
     label: _(Projects that need funding now)
     rules:
       - condition: '"{{location_type}}" === "funding" && {{layer.focused}} === false'
-        icon:
-          iconUrl: /static/css/images/markers/dot-0d85e9.png
-          iconSize: [17, 18]
-          iconAnchor: [9, 9]
+        style:
+          color: '#E9BA83'
+          radius: 8
+          weight: 3
+          opacity: 0.9
+          fillOpacity: 0.7
       - condition: '"{{location_type}}" === "funding" && {{layer.focused}} === true'
-        icon:
-          iconUrl: /static/css/images/markers/marker-0d85e9.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25, 41]
-          shadowSize: [41, 41]
-          iconAnchor: [12, 41]
+        style:
+          color: '#E9BA83'
+          radius: 16
+          weight: 5
+          opacity: 1
+          fillOpacity: .9
   underway:
     label: _(Projects underway)
     rules:
       - condition: '"{{location_type}}" === "underway" && {{layer.focused}} === false'
-        icon:
-          iconUrl: /static/css/images/markers/dot-0d85e9.png
-          iconSize: [17, 18]
-          iconAnchor: [9, 9]
+        style:
+          color: '#004251'
+          radius: 8
+          weight: 3
+          opacity: 0.9
+          fillOpacity: 0.7
       - condition: '"{{location_type}}" === "underway" && {{layer.focused}} === true'
-        icon:
-          iconUrl: /static/css/images/markers/marker-0d85e9.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25, 41]
-          shadowSize: [41, 41]
-          iconAnchor: [12, 41]
+        style:
+          color: '#004251'
+          radius: 16
+          weight: 5
+          opacity: 1
+          fillOpacity: .9
 
 activity:
   # Optional. Activity is supported by default. Set to false to disable.
