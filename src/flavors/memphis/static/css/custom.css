@@ -252,6 +252,19 @@ a.close-btn {
   text-shadow: none;
 }
 
+.response-body {
+  border: 0;
+  background: #fff;
+  color: #001A45;
+}
+.response-body:after {
+  border-top-color: #fff;
+}
+.response-date {
+  color: #fff;
+  color: rgba(255,255,255,0.77);
+}
+
 
 /* =List View
 -------------------------------------------------------------- */
