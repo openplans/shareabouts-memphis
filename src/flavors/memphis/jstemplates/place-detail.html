@@ -3,6 +3,9 @@
 <header class="place-header clearfix">
   <h1>{{ name }}</h1>
   <span class="place-submission-details">
+    
+    {{#ifeq location_type "new"}}
+
     {{#_}}<strong class="point-submitter">
       {{#if submitter.avatar_url }}
         <img src="{{ submitter.avatar_url }}" class="avatar" />
@@ -28,6 +31,10 @@
 
     <span class="survey-count">{{ survey_count }} {{ survey_label_by_count }}</span>
 
+    {{^}}
+    {{/ifeq}}
+
+
     {{^if survey_config}}
     <a href="/place/{{ id }}" class="view-on-map-btn btn btn-small">View On Map</a>
     {{/if}}
@@ -50,8 +57,16 @@
   <p><strong>The result would be...</strong><br/>{{ idea-result }}</p>
   {{/if}}
   
+  {{#if image-url}}
+  <img src={{image-url}}>
+  {{/if}}
+  
   {{#if description }}
   <p>{{ description }}</p>
+  {{/if}}
+  
+  {{#if project-url}}
+  <p><a href={{project-url}}>View on ioby.org</a></p>
   {{/if}}
   
 </section>
