@@ -1,0 +1,76 @@
+{{> place-detail-promotion-bar }}
+
+<header class="place-header clearfix">
+  <h1>{{ name }}</h1>
+  <span class="place-submission-details">
+    
+    {{#ifeq location_type "new"}}
+
+    {{#_}}<strong class="point-submitter">
+      {{#if submitter.avatar_url }}
+        <img src="{{ submitter.avatar_url }}" class="avatar" />
+      {{^}}
+        <img src="{{ STATIC_URL }}/css/images/user-50.png" class="avatar" />
+      {{/if}}
+      {{#if submitter.name }}
+        {{ submitter.name }}
+      {{^}}
+        {{#if submitter_name }}
+          {{ submitter_name }}
+        {{^}}
+          {{ anonymous_name }}
+        {{/if}}
+      {{/if}}
+    </strong> {{ action_text }} this {{ place_type_label location_type}}
+
+    {{#if region}}
+      in {{ region }}
+    {{/if}}{{/_}}
+
+    <time datetime="{{ created_datetime }}" class="response-date"><a href="/place/{{ id }}">{{ fromnow created_datetime }}</a></time>
+
+    <span class="survey-count">{{ survey_count }} {{ survey_label_by_count }}</span>
+
+    {{^}}
+    {{/ifeq}}
+
+
+    {{^if survey_config}}
+    <a href="/place/{{ id }}" class="view-on-map-btn btn btn-small">View On Map</a>
+    {{/if}}
+
+  </span>
+</header>
+
+<section class="place-items">
+  {{# attachments }}
+  <div class="place-item place-item-attachment place-attachment-{{ name }}">
+    <img src="{{ file }}" class="place-value place-value-{{ name }}" alt="{{ name }}">
+  </div>
+  {{/ attachments }}
+  
+  {{#if idea-description }}
+  <p><strong>My idea to Create Memphis is...</strong><br/>{{ idea-description }}</p>
+  {{/if}}
+
+  {{#if idea-result }}
+  <p><strong>The result would be...</strong><br/>{{ idea-result }}</p>
+  {{/if}}
+  
+  {{#if image-url}}
+  <img src={{image-url}}>
+  {{/if}}
+  
+  {{#if description }}
+  <p>{{ description }}</p>
+  {{/if}}
+  
+  {{#if project-url}}
+  <p><a href={{project-url}}>View on ioby.org</a></p>
+  {{/if}}
+  
+</section>
+
+{{#if survey_config}}
+<section class="survey" id="survey"></section>
+{{/if}}

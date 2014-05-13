@@ -1,0 +1,377 @@
+@import url(//fonts.googleapis.com/css?family=Lato|Kreon:700);
+
+
+/* =Color Palette
+-------------------------------------------------------------- */
+
+.red-violet { /* Pantone 5195 */
+  color: #5B3957;
+  color: rgba(91,58,87,1);
+}
+.blue-violet { /* Pantone 2725 */
+  color: #565EAA;
+  color: rgba(86,94,170,1);
+}
+.dark-teal { /* Pantone 316 */
+  color: #004251;
+  color: rgba(0,66,81,1);
+}
+.golden-brown { /* Pantone 7509 */
+  color: #E9BA83;
+  color: rgba(233,186,131,1);
+}
+.pink { /* Pantone 5005 */
+  color: #BB838F;
+  color: rgba(187,131,143,1);
+}
+.navy { /* Pantone 2762 */
+  color: #001A45;
+  color: rgba(0,26,69,1);
+}
+.deep-red { /* Pantone 469 */
+  color: #562700;
+  color: rgba(86,39,0,1);
+}
+
+
+/* =Typography
+-------------------------------------------------------------- */
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #5B3957;
+  color: #fff;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Kreon', serif;
+}
+
+/* Links */
+a, a:active, a:visited {
+  color: #E9BA83;
+}
+a:hover {
+  color: #BB838F;
+}
+.response-date a:active, .response-date a:visited {
+  color: #fff;
+}
+.response-date a:hover {
+  color: #BB838F;
+}
+
+#sign-in-btn {
+  color: #BB838F;
+}
+#sign-in-btn:hover {
+  color: #E9BA83;
+}
+
+/* Buttons */
+.btn,
+.btn:visited,
+.btn:link {
+  background-color: #565EAA;
+  color: #fff;
+  box-shadow: -0.325em 0.325em 0 rgba(0,0,0,0.2);
+}
+.btn:hover {
+  background-color: #565EAA;
+  color: #E9BA83;
+}
+#add-place,
+#add-place:hover {
+  font-weight: 800;
+}
+.submit-btn {
+  font-size: 1.25em;
+  padding: 0.5em 1em;
+}
+.user-support label {
+  color: #eee;
+  font-weight: 400;
+}
+.user-support:hover label {
+  background-color: #565EAA;
+  color: #fff;
+}
+
+#place-form label,
+.survey-field label {
+  color: #bbb;
+  color: rgba(255,255,255,0.77);
+  display: block;
+  font-size: 1em;
+  text-transform: none;
+  margin-bottom: 0.5em;
+}
+.survey-field {
+  padding-bottom: 0.75em;
+}
+#place-form label small {
+  color: rgba(255,255,255,0.5);
+}
+.or-sign-in {
+  color: rgba(255,255,255,0.77);
+}
+#place-form p.file label {
+  display: inline;
+}
+input[type=date], 
+input[type=datetime], 
+input[type=datetime-local], 
+input[type=email], 
+input[type=month], 
+input[type=number], 
+input[type=password], 
+input[type=tel], 
+input[type=text], 
+input[type=time], 
+input[type=url], 
+input[type=week], 
+textarea {
+  border-color: #562700;
+}
+input:focus, 
+textarea:focus {
+  border-color: #BB838F;
+  outline: 2px solid #BB838F;
+}
+
+
+/* =Header
+-------------------------------------------------------------- */
+
+#site-header {
+  background-color: #5B3957;
+  box-shadow: 0 0.325em 0 rgba(0,0,0,0.2);
+}
+#site-title {
+  font-family: 'Kreon', serif;
+  font-size: 0.75em;
+  text-shadow: none;
+}
+#site-title a:link,
+#site-title a:visited {
+  line-height: 1.75;
+}
+#site-title a:link, 
+#site-title a:visited  {
+  color: #fff;
+}
+
+/* Navigation */
+#nav-btn {
+  font-family: "Helvetica Neue", Arial !important;
+  background-color: transparent;
+  color: #001A45;
+  text-shadow: -1px 1px rgba(255,255,255,0.1);
+  width: 1em;
+}
+
+
+/* =The Ticker
+-------------------------------------------------------------- */
+
+#ticker {
+  background-color: #5B3957;
+  box-shadow: -0.325em 0 0 rgba(0,0,0,0.2);
+}
+.recent-points a {
+  color: #fff;
+  color: rgba(255,255,255,0.7);
+  border-top: 1px solid #754970;
+  border-bottom: 1px solid #422A3F;
+}
+.recent-points a:hover {
+  color: #fff;
+  background: #565EAA;
+  border-color: rgba(0,0,0,0.1);
+}
+
+
+/* =Footer
+-------------------------------------------------------------- */
+
+#colophon {
+  background-color: #5B3957;
+  color: #E9BA83;
+  box-shadow: 0 -0.325em 0 rgba(0,0,0,0.2);
+}
+a.shareabouts-logo {
+  color: #00aaff;
+}
+a.shareabouts-logo:hover {
+  color: #007fbf;
+  border-bottom: 1px solid #00aaff;
+}
+#powered-by a.openplans-logo {
+  color: #ff9a52;
+}
+#powered-by a.openplans-logo:hover {
+  color: #ff8b38;
+  border-bottom: 1px solid #ffb885;
+}
+.openplans-logo {
+  font-family: "Helvetica Neue", Arial !important;
+}
+
+
+/* =The Map
+-------------------------------------------------------------- */
+
+#map {
+  background: #e7e3da;
+}
+.leaflet-bar {
+  box-shadow: -0.325em 0.325em 0 rgba(0,0,0,0.2) !important;
+}
+
+#add-place-btn-container {
+  background-color: #5B3957;
+  box-shadow: 0 -0.325em 0 rgba(0,0,0,0.2);
+}
+
+
+/* =Content Panel
+-------------------------------------------------------------- */
+
+#content {
+  background-color: #5B3957;
+  box-shadow: 0 -0.325em 0 rgba(0,0,0,0.2);
+}
+a.close-btn {
+  background-color: #5B3957;
+  color: #BB838F;
+  box-shadow: 0 -0.25em 0 rgba(0,0,0,0.2);
+}
+.drag-marker-instructions, .drag-marker-warning {
+  background-color: #001A45;
+  color: #E9BA83;
+  font-weight: bold;
+  text-shadow: none;
+}
+
+.response-body {
+  border: 0;
+  background: #fff;
+  color: #001A45;
+}
+.response-body:after {
+  border-top-color: #fff;
+}
+.response-date {
+  color: #fff;
+  color: rgba(255,255,255,0.77);
+}
+
+
+/* =List View
+-------------------------------------------------------------- */
+
+#list-container {
+  background-color: #5B3957;
+  box-shadow: -0.325em 0 0 rgba(0,0,0,0.2);
+}
+.list-sort-menu a.is-selected {
+  color: #fff;
+  color: rgba(255,255,255,0.7);
+}
+.place-list > li {
+  border-top-color: #422A3F;
+}
+.list-search-form .submit-btn {
+  font-size: 1em;
+}
+
+
+/* =Zoom Message
+-------------------------------------------------------------- */
+
+.zoom-in-msg {
+  text-align: center;
+  z-index: 1;
+  padding: 0.625em;
+  color: #333;
+  border: 1px solid rgba(0,0,0,0.1);
+  background-color: rgba(238, 238, 238, 0.8);
+  border-radius: 4px;
+}
+
+
+/* =Media Queries
+-------------------------------------------------------------- */
+
+@media only screen and (min-width: 768px) and (max-width: 60em) {
+}
+
+@media only screen and (min-width: 60em) {
+  #site-title {
+    font-size: 1em;
+  }
+  #site-title a:link,
+  #site-title a:visited {
+    line-height: 1.375;
+  }
+  #add-place-btn-container {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  a.close-btn {
+    box-shadow: -0.325em 0.325em 0 rgba(0,0,0,0.2);
+  }
+  #content {
+    box-shadow: -0.325em 0 0 rgba(0,0,0,0.2);
+  }
+
+  .list-toggle-nav {
+    float: left;
+  }
+  .list-toggle-btn,
+  .list-toggle-btn:visited,
+  .list-toggle-btn:link {
+    min-width: 11.5em;
+  }
+  .list-toggle-btn:hover {
+  }
+  .show-the-map:before {
+    content: '\27A4';
+    margin: 0 0.375em;
+    display: inline-block;
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: 30% 60%;
+        -ms-transform-origin: 30% 60%;
+            transform-origin: 30% 60%;
+
+  }
+  .show-the-list:before {
+    content: '\2630';
+    margin: 0 0.375em;
+    text-shadow: -0.25em 0 0 #565EAA, -0.25em -1px 0 #565EAA, -0.25em 1px 0 #565EAA, -0.375em 0 0 #fff;
+  }
+  .list-toggle-btn:hover .show-the-list:before {
+    text-shadow: -0.25em 0 0 #565EAA, -0.25em -1px 0 #565EAA, -0.25em 1px 0 #565EAA, -0.375em 0 0 #E9BA83;
+  }
+
+
+  /* IE8 needs some stuff set again. And it doesn't do shadows. Ugh. */
+/*  .ie8 #site-header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+  }
+  .ie8 #site-title {
+  }
+  .ie8 #site-title a {
+  }
+  .ie8 #ticker {
+    border-left: 1px solid #ddd;
+  }
+  .ie8 #colophon {
+    background-color: #fff;
+    color: #333;
+    border-top: 1px solid #ddd;
+  }*/
+
+}
