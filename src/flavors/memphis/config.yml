@@ -231,17 +231,17 @@ pages:
 #    slug: why
 #    url: why
 
-  - title: _(Filter places)
-    pages:
-      - title: _(New ideas)
-        url: /filter/new
-        external: true
-      - title: _(Needing funding)
-        url: /filter/funding
-        external: true
-      - title: _(Underway)
-        url: /filter/underway
-        external: true
+#  - title: _(Filter places)
+#    pages:
+#      - title: _(New ideas)
+#        url: /filter/new
+#        external: true
+#      - title: _(Needing funding)
+#        url: /filter/funding
+#        external: true
+#      - title: _(Underway)
+#        url: /filter/underway
+#        external: true
 
 notifications:
   on_new_place: true
