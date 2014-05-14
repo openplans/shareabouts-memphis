@@ -56,6 +56,7 @@
   Analytics, custom JS, and such go here
  -->
 {% block includes %}
+<script src="{{STATIC_URL}}js/views/commitment-view.js"></script>
 <script>
 (function(S) {
 
@@ -185,10 +186,9 @@
   // ========================================
   // == Ioby data import
 
-  var placeRender = Shareabouts.PlaceDetailView.prototype.render;
-  Shareabouts.PlaceDetailView.prototype.render = function() {
-    var view = placeRender.call(this),
-        iobyId = this.model.get('ioby_id');
+  var renderIobyBlock = function() {
+    var iobyId = this.model.get('ioby_id'),
+        view = this;
 
     // Render the associated data from ioby
     if (iobyId) {
@@ -207,9 +207,81 @@
         }
       });
     }
+  };
 
-    return view;
+  // ========================================
+  // == New submission type: commitments
+
+  var initializeCommitmentView = function() {
+    this.model.submissionSets['commitments'] = this.model.submissionSets['commitments'] ||
+      new S.SubmissionCollection(null, {
+        submissionType: 'commitments',
+        placeModel: this.model
+      });
+
+    this.commitmentView = new Shareabouts.CommitmentView({
+      collection: this.model.submissionSets['commitments'],
+      userToken: S.Config.userToken
+    });
   }
+
+  var renderCommitmentView = function() {
+    // Render the commitment view, as we do the support and survey views
+    this.$('.commitment').html(this.commitmentView.render().$el);
+    // Fetch for submissions and automatically update the element
+    this.model.submissionSets['commitments'].fetchAllPages();
+  };
+
+  var renderCommitmentViewIntoListItem = function() {
+    this.commitment.show(this.commitmentView);
+  };
+
+  var refreshCommitmentViewEventDelegation = function() {
+    this.collection.each(function(model) {
+      // Delegate the events so that the subviews still work
+      this.views[model.cid].commitmentView.delegateEvents();
+    }, this);
+  };
+
+  // ========================================
+  // == Patch place view
+
+  var placeDetailInitialize = Shareabouts.PlaceDetailView.prototype.initialize;
+  Shareabouts.PlaceDetailView.prototype.initialize = function() {
+    placeDetailInitialize.call(this);
+    initializeCommitmentView.call(this)
+  };
+
+  var placeRender = Shareabouts.PlaceDetailView.prototype.render;
+  Shareabouts.PlaceDetailView.prototype.render = function() {
+    var view = placeRender.call(this);
+    renderIobyBlock.call(this);
+    renderCommitmentView.call(this);
+    return view;
+  };
+
+  // ========================================
+  // == Patch place list and list item views
+
+  var placeListItemInitialize = Shareabouts.PlaceListItemView.prototype.initialize;
+  Shareabouts.PlaceListItemView.prototype.initialize = function() {
+    placeListItemInitialize.call(this);
+    initializeCommitmentView.call(this);
+  };
+
+  Shareabouts.PlaceListItemView.prototype.regions['commitment'] = '.commitment'
+  var placeListItemRender = Shareabouts.PlaceListItemView.prototype.render;
+  Shareabouts.PlaceListItemView.prototype.render = function() {
+    placeListItemRender.call(this);
+    renderCommitmentViewIntoListItem.call(this);
+  };
+
+  var placeRenderList = Shareabouts.PlaceListView.prototype.renderList;
+  Shareabouts.PlaceListView.prototype.renderList = function() {
+    var view = placeRenderList.call(this);
+    refreshCommitmentViewEventDelegation.call(this);
+    return view;
+  };
 
 }(Shareabouts));
 </script>
