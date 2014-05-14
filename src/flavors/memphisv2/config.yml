@@ -1,0 +1,231 @@
+app:
+  title: Create Memphis
+  name: Create Memphis
+  meta_description: _('Share your idea to create something great for Memphis!')
+
+map:
+  geolocation_enabled: true
+  geolocation_onload: false
+  options:
+    center:
+      lat: 35.133498
+      lng: -89.971078
+    zoom: 12
+    minZoom: 10
+    maxZoom: 17
+  layers:
+    - url: http://{s}.tiles.mapbox.com/v3/openplans.map-dmar86ym/{z}/{x}/{y}.png
+      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+
+place_types:
+  new:
+    label: _(New ideas)
+    rules:
+      - condition: '"{{location_type}}" === "new" && {{layer.focused}} === false'
+        style:
+          color: '#565EAA'
+          radius: 8
+          weight: 3
+          opacity: 0.9
+          fillOpacity: 0.7
+      - condition: '"{{location_type}}" === "new" && {{layer.focused}} === true'
+        icon:
+          iconUrl: /static/css/images/markers/marker-blue-violet.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  funding:
+    label: _(Projects that need funding now)
+    rules:
+      - condition: '"{{location_type}}" === "funding" && {{layer.focused}} === false'
+        style:
+          color: '#562700'
+          radius: 8
+          weight: 3
+          opacity: 0.9
+          fillOpacity: 0.7
+      - condition: '"{{location_type}}" === "funding" && {{layer.focused}} === true'
+        icon:
+          iconUrl: /static/css/images/markers/marker-deep-red.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  underway:
+    label: _(Projects underway)
+    rules:
+      - condition: '"{{location_type}}" === "underway" && {{layer.focused}} === false'
+        style:
+          color: '#004251'
+          radius: 8
+          weight: 3
+          opacity: 0.9
+          fillOpacity: 0.7
+      - condition: '"{{location_type}}" === "underway" && {{layer.focused}} === true'
+        icon:
+          iconUrl: /static/css/images/markers/marker-dark-teal.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+
+activity:
+  enabled: true
+  interval: 30000
+
+place:
+  adding_supported: true
+  add_button_label: _(Add a Place)
+  # Labels for the buttons that toggle the map and list views
+  show_list_button_label: _(Show as list)
+  show_map_button_label: _(Show on map)
+  title: _(Tell us more...)
+  action_text: _(suggested)
+  anonymous_name: _(Someone)
+  submit_button_label: _(Submit)
+  items:
+    - type: hidden
+      name: location_type
+      attrs:
+      - key: value
+        value: new
+    - prompt: _(Your Name)
+      type: text
+      name: submitter_name
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Name)
+        - key: size
+          value: 30
+    - prompt: _(Project Title)
+      type: textarea
+      name: name
+      attrs:
+        - key: size
+          value: 30
+        - key: required
+        - key: maxlength
+          value: 100
+    - prompt: _(Add an image!)
+      inputfile_label: _(Upload)
+      type: file
+      name: my_image
+      optional: true
+      attrs:
+        - key: accept
+          value: image/*
+    - prompt: _(My idea to Create Memphis is...)
+      type: textarea
+      name: idea-description
+      attrs:
+        - key: required
+        - key: maxlength
+          value: 300
+    - prompt: _(The result would be...)
+      type: textarea
+      name: idea-result
+      attrs:
+        - key: required
+        - key: maxlength
+          value: 300
+    - prompt: _(Your Email)
+      type: text
+      name: private-submitter_email
+      attrs:
+        - key: size
+          value: 30
+        - key: required
+    - prompt: _(Phone (optional))
+      type: text
+      optional: true
+      name: private-phone
+    - prompt: _(Are you committed to helping make this happen?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Yes)
+          value: yes
+        - label: _(No)
+          value: no
+      name: private-committed
+    - prompt: _(Do you live in the neighborhood where you’re proposing the idea?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Yes)
+          value: yes
+        - label: _(No)
+          value: no
+      name: private-neighborhood
+    - prompt: _(Do you have any questions about how to turn your idea into reality?)
+      type: textarea
+      name: private-questions
+
+survey:
+  submission_type: comments
+
+  # Response config
+  show_responses: true
+  response_name: _(comment)
+  response_plural_name: _(comments)
+  action_text: _(commented on)
+  anonymous_name: _(Someone)
+
+  # Survey form config
+  title: _(Leave a Comment)
+  form_link_text: _(Leave a Comment)
+  submit_btn_text: _(Comment)
+  items:
+    - prompt: _(Comment)
+      label: _(Comment)
+      type: textarea
+      name: comment
+      attrs:
+        - key: required
+    - prompt: _(Your name)
+      type: text
+      name: submitter_name
+    - prompt: _(Your Email)
+      type: text
+      name: private-submitter_email
+      attrs:
+        - key: required
+
+support:
+  submission_type: support
+  submit_btn_text: _(Support)
+  response_name: _(support)
+  response_plural_name: _(supports)
+  action_text: supported
+  anonymous_name: _(Someone)
+
+pages:
+  - title: _(About)
+    slug: about
+    name: overview
+    start_page: true
+ # - title: _(FAQ)
+ #   slug: faq
+ #   url: faq
+  - title: _(Filter places)
+    pages:
+      - title: _(Show All)
+        url: /
+        external: true
+      - title: _(New ideas)
+        url: /filter/new
+        external: true
+      - title: _(Needing funding)
+        url: /filter/funding
+        external: true
+      - title: _(Underway)
+        url: /filter/underway
+        external: true
+
+notifications:
+  on_new_place: true
+  submitter_email_field: private-submitter_email

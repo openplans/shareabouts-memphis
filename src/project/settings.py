@@ -259,7 +259,10 @@ if all(['S3_MEDIA_BUCKET' in env, 'AWS_ACCESS_KEY' in env, 'AWS_SECRET_KEY' in e
     COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', str(not DEBUG)).lower() in ('true', 't')
     COMPRESS_STORAGE = 'project.backends.S3BotoStorage'
     COMPRESS_URL = '//%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
-
+if 'GOOGLE_ANALYTICS_ID' in env:
+    GOOGLE_ANALYTICS_ID = env.get('GOOGLE_ANALYTICS_ID')
+if 'GOOGLE_ANALYTICS_DOMAIN' in env:
+    GOOGLE_ANALYTICS_DOMAIN = env.get('GOOGLE_ANALYTICS_DOMAIN')
 
 # For sitemaps and caching -- will be a new value every time the server starts
 LAST_DEPLOY_DATE = datetime.datetime.now().replace(second=0, microsecond=0).isoformat()

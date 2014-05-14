@@ -1,0 +1,26 @@
+<div class="user-commitment {{# if has_committed }}is-committed{{/ if }}">
+
+  <button type="button" class="btn btn-small btn-block commitment-button">{{# if has_committed }}I have<br>committed<br>to help!{{ else }}Commit<br>to help{{/ if }}</button>
+
+  {{# if has_committed }}
+  <form action="#" method="delete" class="user-commitment-form destroy-form is-hidden">
+    <p>
+      <button type="submit" class="btn btn-small">Remove my commitment</button>
+      <a href="#" class="cancel-link">&times;<small> Cancel</small></a>
+    </p>
+  </form>
+  {{ else }}
+  <form action="#" method="post" class="user-commitment-form create-form is-hidden">
+    <input type="hidden" name="user_token" value="{{{ user_token }}}">
+    <input type="hidden" name="visible" value="true">
+    <p>
+      <label>Your Email <input type="email" name="private-email" required placeholder=""></label>
+      <label>Your Phone # <small>(optional)</small> <input type="text" name="private-phone" placeholder=""></label>
+    </p>
+    <p>
+      <button type="submit" class="btn btn-small">I commit to help</button>
+      <a href="#" class="cancel-link">&times;<small> Cancel</small></a>
+    </p>
+  </form>
+  {{/ if }}
+</div>
