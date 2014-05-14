@@ -3,7 +3,7 @@
 var Shareabouts = Shareabouts || {};
 
 (function(S, $, console){
-  S.RatingView = Backbone.View.extend({
+  S.CommitmentView = Backbone.View.extend({
     events: {
       'click .star': 'onStarClick',
       'change input[name=rating]': 'onRatingChange'
@@ -30,33 +30,29 @@ var Shareabouts = Shareabouts || {};
 
           judge1, judge2;
 
-      // if the place is not in a judging group or a user
-      if (!judgeGroup || !user || !(group1 || group2) ) { return this; }
+      // // if the place is not in a judging group or a user
+      // if (!judgeGroup || !user || !(group1 || group2) ) { return this; }
 
-      if (judgeGroup === '1') { judge1 = true; }
-      if (judgeGroup === '3') { judge2 = true; }
+      // if (judgeGroup === '1') { judge1 = true; }
+      // if (judgeGroup === '3') { judge2 = true; }
 
-      // Don't judge this at all because it's not a group we care about OR
-      // if the judge doesn't match the place juding group
-      if ((!judge1 && !judge2) || (group1 && judge2) || (group2 && judge1)) {
-        // show a helpful message
-        this.$el.html('<p class="user-rating-prompt" style="margin-bottom:1em">No judging required</p>');
+      // // Don't judge this at all because it's not a group we care about OR
+      // // if the judge doesn't match the place juding group
+      // if ((!judge1 && !judge2) || (group1 && judge2) || (group2 && judge1)) {
+      //   // show a helpful message
+      //   this.$el.html('<p class="user-rating-prompt" style="margin-bottom:1em">No judging required</p>');
 
-        return this;
-      }
+      //   return this;
+      // }
 
       // I don't understand why we need to redelegate the event here, but they
       // are definitely unbound after the first render.
       this.delegateEvents();
 
-      Handlebars.registerHelper('is_star_filled', function(starNum, options) {
-        return (self.userRating && self.userRating.get('rating') >= starNum ? options.fn(this) : options.inverse(this));
-      });
-
-      this.$el.html(Handlebars.templates['place-detail-rating']({
+      this.$el.html(Handlebars.templates['place-detail-commitment']({
         count: this.collection.size() || '',
         user_token: this.options.userToken,
-        has_rated: (this.userRating !== undefined),
+        has_committed: (this.userRating !== undefined),
         user_rating: this.userRating,
       }));
 

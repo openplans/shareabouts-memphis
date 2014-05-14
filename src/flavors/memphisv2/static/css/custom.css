@@ -198,6 +198,10 @@ textarea:focus {
   display: none;
 }
 
+.access li:nth-child(2) {
+  display: none;
+}
+
 
 /* =The Ticker
 -------------------------------------------------------------- */
@@ -523,18 +527,56 @@ button.star.is-full:disabled {
     border-radius: 0.25em;
   }
 
+  .access li:nth-child(2) {
+    display: block;
+  }
   .access li:hover > ul {
-    background: #565EAA;
-    border: 3px solid rgba(0,0,0,0.1);
+    background-color: #fff;
+    border: 0;
   }
   .menu-item .menu-item a {
     white-space: nowrap;
   }
-  
+
   .access li ul li a {
-    background: url() 5px center no-repeat scroll !important;
     text-align: left !important;
-    padding: 10px 10px 10px 30px !important;
+    line-height: 1.75;
+    background-color: #fff !important;
+/*    background-color: rgba(255,255,255,0.5) !important;*/
+    color: #001A45 !important;
+  }
+  .access li ul li a:hover {
+    background-color: #BB838F !important;
+  }
+  .access li ul li:nth-child(2) a,
+  .access li ul li:nth-child(3) a,
+  .access li ul li:nth-child(4) a {
+    margin: 0 !important;
+  }
+  .access li ul li:nth-child(2) a:before,
+  .access li ul li:nth-child(3) a:before,
+  .access li ul li:nth-child(4) a:before {
+    content: '';
+    display: inline-block;
+    background-color: #565EAA;
+    background-color: rgba(86,94,170,0.7);
+    width: 0.75em;
+    height: 0.75em;
+    border: 0.25em solid #565EAA;
+    border-radius: 1em;
+    margin: 0 0.5em 0 0;
+    position: relative;
+    top: 0.125em;
+  }
+  .access li ul li:nth-child(3) a:before {
+    background-color: #562700;
+    background-color: rgba(86,39,0,0.7);
+    border-color: #562700;
+  }
+  .access li ul li:nth-child(4) a:before {
+    background-color: #004251;
+    background-color: rgba(0,66,81,0.7);
+    border-color: #004251;
   }
 
 }

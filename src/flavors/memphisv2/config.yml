@@ -207,7 +207,7 @@ pages:
  #   url: faq
   - title: _(Filter places)
     pages:
-      - title: _(All)
+      - title: _(Show All)
         url: /
         external: true
       - title: _(New ideas)
