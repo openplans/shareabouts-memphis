@@ -100,12 +100,14 @@ place:
         - key: size
           value: 30
     - prompt: _(Project Title)
-      type: text
+      type: textarea
       name: name
       attrs:
         - key: size
           value: 30
         - key: required
+        - key: maxlength
+          value: 100
     - prompt: _(Add an image!)
       inputfile_label: _(Upload)
       type: file
@@ -119,11 +121,15 @@ place:
       name: idea-description
       attrs:
         - key: required
+        - key: maxlength
+          value: 300
     - prompt: _(The result would be...)
       type: textarea
       name: idea-result
       attrs:
         - key: required
+        - key: maxlength
+          value: 300
     - prompt: _(Your Email)
       type: text
       name: private-submitter_email

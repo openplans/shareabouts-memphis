@@ -153,7 +153,7 @@ textarea:focus {
   font-size: 0.75em;
   font-weight: 800;
   line-height: 1.5;
-  background: #fff url("http://ourmiami.org/wp-content/themes/engage/img/bg-border-lined-dots.png") left top repeat;
+  background: #000 url("http://ourmiami.org/wp-content/themes/engage/img/bg-border-lined-dots.png") left top repeat;
   margin-bottom: -3px;
   padding: 4px 8px 2px 8px;
   border-radius: 4px 4px 0 0;
