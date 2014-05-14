@@ -58,6 +58,11 @@
 {% block includes %}
 <script>
 (function(S) {
+
+  // ========================================
+  // == Filtering
+  //    TODO: Move this to core.
+
   Shareabouts.AppView.prototype.onClickClosePanelBtn = function(evt) {
     evt.preventDefault();
     S.Util.log('USER', 'panel', 'close-btn-click');
@@ -166,13 +171,16 @@
     });
   };
 
-  $(document).on('click', 'a.why-sign-in', function(evt) {
-    evt.preventDefault();
-  });
-
   $(document).on('click', '.activity-item a', function(evt) {
     window.app.appView.mapView.clearFilter();
   })
+
+  // ========================================
+  // == Why sign in...
+
+  $(document).on('click', 'a.why-sign-in', function(evt) {
+    evt.preventDefault();
+  });
 
 }(Shareabouts));
 </script>
