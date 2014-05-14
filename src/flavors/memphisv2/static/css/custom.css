@@ -73,6 +73,7 @@ a:hover {
   background-color: #565EAA;
   color: #fff;
   box-shadow: -0.325em 0.325em 0 rgba(0,0,0,0.2);
+  font-family: 'Lato', sans-serif;
 }
 .btn:hover {
   background-color: #004251;
@@ -87,8 +88,7 @@ a:hover {
   padding: 0.5em 1em;
 }
 .user-support label {
-  color: #eee;
-  font-weight: 400;
+  color: #fff;
 }
 .user-support:hover label {
   background-color: #004251;
@@ -429,6 +429,18 @@ button.star.is-full:disabled {
   color: #ddd;
   -webkit-animation: pulse 1s infinite ease-in-out;
           animation: pulse 1s infinite ease-in-out;
+}
+
+
+/* =User Commitment
+-------------------------------------------------------------- */
+
+.user-commitment {
+  position: relative;
+}
+.user-commitment-form {
+  background-color: #fff;
+  padding: 0.5em;
 }
 
 
