@@ -29,12 +29,12 @@ place_types:
           opacity: 0.9
           fillOpacity: 0.7
       - condition: '"{{location_type}}" === "new" && {{layer.focused}} === true'
-        style:
-          color: '#565EAA'
-          radius: 16
-          weight: 5
-          opacity: 1
-          fillOpacity: .9
+        icon:
+          iconUrl: /static/css/images/markers/marker-blue-violet.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
   funding:
     label: _(Projects that need funding now)
     rules:
@@ -46,12 +46,12 @@ place_types:
           opacity: 0.9
           fillOpacity: 0.7
       - condition: '"{{location_type}}" === "funding" && {{layer.focused}} === true'
-        style:
-          color: '#562700'
-          radius: 16
-          weight: 5
-          opacity: 1
-          fillOpacity: .9
+        icon:
+          iconUrl: /static/css/images/markers/marker-deep-red.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
   underway:
     label: _(Projects underway)
     rules:
@@ -63,12 +63,12 @@ place_types:
           opacity: 0.9
           fillOpacity: 0.7
       - condition: '"{{location_type}}" === "underway" && {{layer.focused}} === true'
-        style:
-          color: '#004251'
-          radius: 16
-          weight: 5
-          opacity: 1
-          fillOpacity: .9
+        icon:
+          iconUrl: /static/css/images/markers/marker-dark-teal.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
 
 activity:
   enabled: true
