@@ -4,14 +4,18 @@
 
   {{# if has_committed }}
   <form action="#" method="delete" class="user-commitment-form destroy-form is-hidden">
-    <button type="submit" class="btn btn-small btn-block">Remove my commitment</button>
+    <p>
+      <button type="submit" class="btn btn-small">Remove my commitment</button>
+      <a href="#" class="cancel-link">&times;<small> Cancel</small></a>
+    </p>
   </form>
   {{ else }}
   <form action="#" method="post" class="user-commitment-form create-form is-hidden">
     <input type="hidden" name="user_token" value="{{{ user_token }}}">
     <input type="hidden" name="visible" value="true">
     <p>
-      <input type="email" name="private-email" placeholder="email address...">
+      <label>Your Email <input type="email" name="private-email" required placeholder=""></label>
+      <label>Your Phone # <small>(optional)</small> <input type="text" name="private-phone" placeholder=""></label>
     </p>
     <p>
       <button type="submit" class="btn btn-small">I commit to help</button>

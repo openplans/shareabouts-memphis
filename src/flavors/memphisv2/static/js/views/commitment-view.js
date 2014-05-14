@@ -6,6 +6,7 @@ var Shareabouts = Shareabouts || {};
   S.CommitmentView = Backbone.View.extend({
     events: {
       'click .commitment-button': 'onCommitmentButtonClick',
+      'click .cancel-link': 'onCancelLinkClick',
       'submit form': 'onCommitmentChange'
     },
 
@@ -56,6 +57,10 @@ var Shareabouts = Shareabouts || {};
       this.$('form').removeClass('is-hidden');
     },
 
+    onCancelLinkClick: function(evt) {
+      this.$('form').addClass('is-hidden');
+    },
+
     onCommitmentChange: function(evt) {
       evt.preventDefault();
 
@@ -85,10 +90,10 @@ var Shareabouts = Shareabouts || {};
             xhr.setRequestHeader('X-Shareabouts-Silent', 'true');
           },
           success: function() {
-            ratings.add(userCommitment);
             logEvent('successfully-commit');
           },
           error: function() {
+            self.getCommitment(self.options.userToken).destroy();
             alert('Oh dear. It looks like that didn\'t save.');
             logEvent('fail-to-commit');
           }
