@@ -530,5 +530,11 @@ button.star.is-full:disabled {
   .menu-item .menu-item a {
     white-space: nowrap;
   }
+  
+  .access li ul li a {
+    background: url() 5px center no-repeat scroll !important;
+    text-align: left !important;
+    padding: 10px 10px 10px 30px !important;
+  }
 
 }
