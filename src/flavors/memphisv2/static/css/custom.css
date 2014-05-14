@@ -438,9 +438,42 @@ button.star.is-full:disabled {
 .user-commitment {
   position: relative;
 }
+.commitment-button {
+  margin-bottom: 1em;
+  outline: 0;
+}
 .user-commitment-form {
   background-color: #fff;
-  padding: 0.5em;
+  padding: 1em;
+  border-radius: 4px;
+  box-shadow: -0.325em 0.325em 0 rgba(0,0,0,0.2);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  min-width: 15em;
+}
+.user-commitment-form p {
+  margin-bottom: 0.5em;
+}
+.user-commitment-form input {
+  border-color: #E9BA83;
+}
+.user-commitment-form input:focus {
+  border-color: #BB838F;
+}
+.user-commitment-form .cancel-link {
+  float: right;
+  text-decoration: none;
+  color: #BB838F;
+  font-size: 1.25em;
+}
+.user-commitment-form .cancel-link small {
+  font-size: 0.5em;
+  text-transform: uppercase;
+  position: relative;
+  top: -0.3em;
 }
 
 
