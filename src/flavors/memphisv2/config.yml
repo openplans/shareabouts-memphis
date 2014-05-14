@@ -156,14 +156,7 @@ place:
           value: no
       name: private-neighborhood
     - prompt: _(Do you have any questions about how to turn your idea into reality?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Yes)
-          value: yes
-        - label: _(No)
-          value: no
+      type: textarea
       name: private-questions
 
 survey:
