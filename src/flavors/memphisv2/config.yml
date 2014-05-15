@@ -76,7 +76,7 @@ activity:
 
 place:
   adding_supported: true
-  add_button_label: _(Add a Place)
+  add_button_label: _(Add an Idea)
   # Labels for the buttons that toggle the map and list views
   show_list_button_label: _(Show as list)
   show_map_button_label: _(Show on map)
@@ -211,7 +211,7 @@ pages:
  # - title: _(FAQ)
  #   slug: faq
  #   url: faq
-  - title: _(Filter places)
+  - title: _(Filter Ideas)
     pages:
       - title: _(Show All)
         url: /
@@ -219,7 +219,7 @@ pages:
       - title: _(New ideas)
         url: /filter/new
         external: true
-      - title: _(Needing funding)
+      - title: _(Seeking funding)
         url: /filter/funding
         external: true
       - title: _(Underway)
