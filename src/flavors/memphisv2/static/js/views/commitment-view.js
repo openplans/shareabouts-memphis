@@ -58,6 +58,7 @@ var Shareabouts = Shareabouts || {};
     },
 
     onCancelLinkClick: function(evt) {
+      evt.preventDefault();
       this.$('form').addClass('is-hidden');
     },
 
