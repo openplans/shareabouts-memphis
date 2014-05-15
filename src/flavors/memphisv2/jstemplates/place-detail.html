@@ -65,6 +65,18 @@
           {{#if image-url}}
           <img src={{image-url}}>
           {{/if}}
+          
+          {{#if ioby-description }}
+          <p><strong>The project</strong><br/>{{ ioby-description }}</p>
+          {{/if}}
+          
+          {{#if ioby-steps }}
+          <p><strong>The steps</strong><br/>{{ ioby-steps }}</p>
+          {{/if}}
+          
+          {{#if ioby-why }}
+          <p><strong>Why</strong><br/>{{ ioby-why }}</p>
+          {{/if}}
 
           {{#if description }}
           <p>{{ description }}</p>
