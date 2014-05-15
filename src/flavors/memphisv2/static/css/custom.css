@@ -117,22 +117,22 @@ a:hover {
 #place-form p.file label {
   display: inline;
 }
-input[type=date], 
-input[type=datetime], 
-input[type=datetime-local], 
-input[type=email], 
-input[type=month], 
-input[type=number], 
-input[type=password], 
-input[type=tel], 
-input[type=text], 
-input[type=time], 
-input[type=url], 
-input[type=week], 
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
 textarea {
   border-color: #562700;
 }
-input:focus, 
+input:focus,
 textarea:focus {
   border-color: #BB838F;
   outline: 2px solid #BB838F;
@@ -180,7 +180,7 @@ textarea:focus {
 #site-title a:visited {
   line-height: 1.75;
 }
-#site-title a:link, 
+#site-title a:link,
 #site-title a:visited  {
   color: #fff;
 }
@@ -453,6 +453,7 @@ button.star.is-full:disabled {
   bottom: auto;
   left: auto;
   min-width: 16.75em;
+  z-index: 1;
 }
 .user-commitment-form p {
   margin-bottom: 0.5em;
