@@ -74,6 +74,12 @@
     }
   };
 
+  var appViewToggleListView = Shareabouts.AppView.prototype.toggleListView;
+  Shareabouts.AppView.prototype.toggleListView = function() {
+    appViewToggleListView.call(this);
+    this.mapView.clearFilter();
+  };
+
   var appInitialize = Shareabouts.App.prototype.initialize;
   Shareabouts.App.prototype.initialize = function(options) {
     var self = this;
