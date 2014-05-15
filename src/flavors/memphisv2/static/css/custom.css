@@ -453,6 +453,7 @@ button.star.is-full:disabled {
   bottom: auto;
   left: auto;
   min-width: 16.75em;
+  z-index: 1;
 }
 .user-commitment-form p {
   margin-bottom: 0.5em;
