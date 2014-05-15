@@ -1,0 +1,294 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block site-title %}
+<a href="/">{{ config.app.name }}</a>
+{% endblock %}
+
+{% block meta %}
+  {% if place %}
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ place.properties.name }}">
+    <meta name="twitter:description" content="{{ place.properties.description }}">
+    {% with attachment=place.properties.attachments|first %}
+    <meta name="twitter:image:src" content="{{ attachment.file }}">
+    {% endwith %}
+    {% comment %} TODO: Fill this in when we know if the username is from twitter
+      <meta name="twitter:creator" content="place.submitter.username">
+    {% endcomment %}
+
+    <!-- Facebook -->
+    <meta property="og:site_name" content="{{ config.app.title }}" />
+    <meta property="og:title" content="{{ place.properties.name }}" />
+    <meta property="og:description" content="{{ place.properties.description }}" />
+    {% with attachment=place.properties.attachments|first %}
+    <meta name="og:image" content="{{ attachment.file }}">
+    {% endwith %}
+  {% else %}
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ config.app.title }}">
+    <meta name="twitter:description" content="{{ config.app.meta_description }}">
+
+    <!-- Facebook -->
+    <meta property="og:site_name" content="{{ config.app.title }}" />
+    <meta property="og:title" content="{{ config.app.title }}" />
+    <meta property="og:description" content="{{ config.app.meta_description }}" />
+  {% endif%}
+{% endblock %}
+
+<!--
+  This will place content at the top of the side bar
+ -->
+{% block sidebar %}
+{% endblock %}
+
+<!--
+<!--
+  This will place content in the colophon below the map
+ -->
+{% block colophon %}
+<p id="powered-by">{% blocktrans %}Powered by{% endblocktrans %} <a href="http://shareabouts.org/" class="shareabouts-logo" target="_blank">Shareabouts</a>, <span class="nobreak">a project of <a href="http://openplans.org/" class="openplans-logo" target="_blank">OpenPlans</a>.</span></p>
+{% endblock %}
+
+<!--
+  Analytics, custom JS, and such go here
+ -->
+{% block includes %}
+<script src="{{STATIC_URL}}js/views/commitment-view.js"></script>
+<script>
+(function(S) {
+
+  // ========================================
+  // == Filtering
+  //    TODO: Move this to core.
+
+  Shareabouts.AppView.prototype.onClickClosePanelBtn = function(evt) {
+    evt.preventDefault();
+    S.Util.log('USER', 'panel', 'close-btn-click');
+    if (this.mapView.locationTypeFilter) {
+      this.options.router.navigate('filter/' + this.mapView.locationTypeFilter, {trigger: true});
+    } else {
+      this.options.router.navigate('/', {trigger: true});
+    }
+  };
+
+  var appViewToggleListView = Shareabouts.AppView.prototype.toggleListView;
+  Shareabouts.AppView.prototype.toggleListView = function() {
+    appViewToggleListView.call(this);
+    this.mapView.clearFilter();
+  };
+
+  var appInitialize = Shareabouts.App.prototype.initialize;
+  Shareabouts.App.prototype.initialize = function(options) {
+    var self = this;
+
+    this.route('filter/:locationtype', 'filterMap');
+
+    appInitialize.call(this, options);
+
+    this.bind('route', function(route) {
+      if (route === 'filterMap' || route === 'viewPlace') {
+        // Don't clear the filter
+      } else {
+        this.appView.mapView.clearFilter();
+      }
+    }, this);
+
+
+    $(document).on('click', 'a[href^="/"]', function(evt) {
+      var $link = $(evt.currentTarget),
+          href = $link.attr('href'),
+          url;
+
+      // Handle /filter links
+      if (href.indexOf('/filter') === 0) {
+        evt.preventDefault();
+
+        // Remove leading slashes and hash bangs (backward compatablility)
+        url = href.replace(/^\//, '').replace('#!/', '');
+
+        // # Instruct Backbone to trigger routing events
+        self.navigate(url, { trigger: true });
+
+        return false;
+      }
+    });
+  };
+
+  Shareabouts.App.prototype.filterMap = function(locationType) {
+    this.appView.hidePanel();
+    this.appView.hideNewPin();
+    this.appView.destroyNewModels();
+    this.appView.showAddButton();
+
+    this.appView.mapView.filter(locationType);
+  };
+
+  var appViewMap = Shareabouts.App.prototype.viewMap;
+  Shareabouts.App.prototype.viewMap = function() {
+    appViewMap.call(this);
+    this.appView.mapView.clearFilter();
+  }
+
+  Shareabouts.MapView.prototype.clearFilter = function() {
+    var self = this;
+    this.locationTypeFilter = null;
+    this.collection.each(function(model) {
+      self.layerViews[model.cid].render();
+    });
+  };
+
+  Shareabouts.MapView.prototype.filter = function(locationType) {
+    var self = this;
+    console.log('filter the map', arguments);
+    this.locationTypeFilter = locationType;
+    this.collection.each(function(model) {
+      var modelLocationType = model.get('location_type');
+
+      if (modelLocationType &&
+          modelLocationType.toUpperCase() === locationType.toUpperCase()) {
+        self.layerViews[model.cid].show();
+      } else {
+        self.layerViews[model.cid].hide();
+      }
+    });
+  };
+
+  var layerViewShow = Shareabouts.LayerView.prototype.show;
+  Shareabouts.LayerView.prototype.show = function() {
+    if (!this.options.mapView.locationTypeFilter ||
+      this.options.mapView.locationTypeFilter.toUpperCase() === this.model.get('location_type').toUpperCase()) {
+      layerViewShow.call(this);
+    } else {
+      this.hide();
+    }
+  };
+
+  Shareabouts.MapView.prototype.addLayerView = function(model) {
+    this.layerViews[model.cid] = new S.LayerView({
+      model: model,
+      router: this.options.router,
+      map: this.map,
+      placeLayers: this.placeLayers,
+      placeTypes: this.options.placeTypes,
+      // to access the filter
+      mapView: this
+    });
+  };
+
+  $(document).on('click', '.activity-item a', function(evt) {
+    window.app.appView.mapView.clearFilter();
+  })
+
+  // ========================================
+  // == Why sign in...
+
+  $(document).on('click', 'a.why-sign-in', function(evt) {
+    evt.preventDefault();
+  });
+
+  // ========================================
+  // == Ioby data import
+
+  var renderIobyBlock = function() {
+    var iobyId = this.model.get('ioby_id'),
+        view = this;
+
+    // Render the associated data from ioby
+    if (iobyId) {
+      $.ajax({
+        url: 'https://free-ec2.scraperwiki.com/b5pr75y/fd06f5327055496/sql/',
+        data: {
+          q: 'select * from swdata where id='+iobyId
+        },
+        dataType: 'jsonp',
+        success: function(data, status, xhr) {
+          var $template;
+          if (data && data.length) {
+            $template = $(Handlebars.templates['ioby-details'](data[0]));
+            view.$('.ioby-details').html($template)
+          }
+        }
+      });
+    }
+  };
+
+  // ========================================
+  // == New submission type: commitments
+
+  var initializeCommitmentView = function() {
+    this.model.submissionSets['commitments'] = this.model.submissionSets['commitments'] ||
+      new S.SubmissionCollection(null, {
+        submissionType: 'commitments',
+        placeModel: this.model
+      });
+
+    this.commitmentView = new Shareabouts.CommitmentView({
+      collection: this.model.submissionSets['commitments'],
+      userToken: S.Config.userToken
+    });
+  }
+
+  var renderCommitmentView = function() {
+    // Render the commitment view, as we do the support and survey views
+    this.$('.commitment').html(this.commitmentView.render().$el);
+    // Fetch for submissions and automatically update the element
+    this.model.submissionSets['commitments'].fetchAllPages();
+  };
+
+  var renderCommitmentViewIntoListItem = function() {
+    this.commitment.show(this.commitmentView);
+  };
+
+  var refreshCommitmentViewEventDelegation = function() {
+    this.collection.each(function(model) {
+      // Delegate the events so that the subviews still work
+      this.views[model.cid].commitmentView.delegateEvents();
+    }, this);
+  };
+
+  // ========================================
+  // == Patch place view
+
+  var placeDetailInitialize = Shareabouts.PlaceDetailView.prototype.initialize;
+  Shareabouts.PlaceDetailView.prototype.initialize = function() {
+    placeDetailInitialize.call(this);
+    initializeCommitmentView.call(this)
+  };
+
+  var placeRender = Shareabouts.PlaceDetailView.prototype.render;
+  Shareabouts.PlaceDetailView.prototype.render = function() {
+    var view = placeRender.call(this);
+    renderIobyBlock.call(this);
+    renderCommitmentView.call(this);
+    return view;
+  };
+
+  // ========================================
+  // == Patch place list and list item views
+
+  var placeListItemInitialize = Shareabouts.PlaceListItemView.prototype.initialize;
+  Shareabouts.PlaceListItemView.prototype.initialize = function() {
+    placeListItemInitialize.call(this);
+    initializeCommitmentView.call(this);
+  };
+
+  Shareabouts.PlaceListItemView.prototype.regions['commitment'] = '.commitment'
+  var placeListItemRender = Shareabouts.PlaceListItemView.prototype.render;
+  Shareabouts.PlaceListItemView.prototype.render = function() {
+    placeListItemRender.call(this);
+    renderCommitmentViewIntoListItem.call(this);
+  };
+
+  var placeRenderList = Shareabouts.PlaceListView.prototype.renderList;
+  Shareabouts.PlaceListView.prototype.renderList = function() {
+    var view = placeRenderList.call(this);
+    refreshCommitmentViewEventDelegation.call(this);
+    return view;
+  };
+
+}(Shareabouts));
+</script>
+{% endblock %}
