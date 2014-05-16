@@ -160,7 +160,7 @@ place:
           value: no
       name: private-neighborhood
     - prompt: _(Do you have any questions about how to turn your idea into reality?)
-      type: textarea
+      type: text
       name: private-questions
 
 survey:
