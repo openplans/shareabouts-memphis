@@ -288,6 +288,15 @@
     refreshCommitmentViewEventDelegation.call(this);
     return view;
   };
+  
+  Handlebars.registerHelper('newLineToBr', function(str) {
+    if (str) {
+      str = Handlebars.Utils.escapeExpression(str);
+      return new Handlebars.SafeString(str.replace(/\r?\n|\r/g, '<br>'))
+    } else {
+      return str;
+    }
+  });
 
 }(Shareabouts));
 </script>
