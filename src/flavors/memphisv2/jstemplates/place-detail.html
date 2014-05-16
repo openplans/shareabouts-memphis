@@ -55,11 +55,11 @@
           {{/ attachments }}
 
           {{#if idea-description }}
-          <p><strong>My idea to Create Memphis is...</strong><br/>{{ idea-description }}</p>
+          <p><strong>My idea to Create Memphis is...</strong><br/>{{ newLineToBr idea-description }}</p>
           {{/if}}
 
           {{#if idea-result }}
-          <p><strong>The result would be...</strong><br/>{{ idea-result }}</p>
+          <p><strong>The result would be...</strong><br/>{{ newLineToBr idea-result }}</p>
           {{/if}}
 
           {{#if image-url}}
@@ -67,19 +67,19 @@
           {{/if}}
           
           {{#if ioby-description }}
-          <p><strong>The project</strong><br/>{{ ioby-description }}</p>
+          <p><strong>The project</strong><br/>{{ newLineToBr ioby-description }}</p>
           {{/if}}
           
           {{#if ioby-steps }}
-          <p><strong>The steps</strong><br/>{{ ioby-steps }}</p>
+          <p><strong>The steps</strong><br/>{{ newLineToBr ioby-steps }}</p>
           {{/if}}
           
           {{#if ioby-why }}
-          <p><strong>Why</strong><br/>{{ ioby-why }}</p>
+          <p><strong>Why</strong><br/>{{ newLineToBr ioby-why }}</p>
           {{/if}}
 
           {{#if description }}
-          <p>{{ description }}</p>
+          <p>{{ newLineToBr description }}</p>
           {{/if}}
         </section>
 
