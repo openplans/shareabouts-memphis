@@ -1,25 +1,16 @@
-We received your Public Space Challenge idea. Thank you!
+Thank you for sharing your idea to #CreateMemphis... you're awesome!
 
-Here is a link to your idea on the map: <http://{{ request.get_host }}/place/{{ place.id }}>
+Here's a direct link to it: <http://{{ request.get_host }}/place/{{ place.id }}>
 
-What now?
+If you are committed to being a part of making your idea into reality, your next step should be to share your idea with your friends, family, colleagues, neighbors - anyone you think might be interested in supporting or sharing your idea. 
 
-SHARE your idea with your friends on social media (pssst... the idea that receives the most "likes" will get something special). Be sure to check out and comment on other ideas while you're at it.
+The more people who see and share your idea, the more support you can build to make it turn into reality.
 
-SUBMIT another idea. We know you have some more good ones! You have until XX April to get ideas onto the map.
+Use the link above to tell everyone about your idea through email or social media.  If you're using social media, like Facebook or Twitter or Instagram, use the hashtage #CreateMemphis. Encourage others to start a conversation by leaving a comment or clicking the Commit to Help button.
 
-START working on your project now. Our partner ioby--a tool for people who have great ideas for their neighborhoods--can help you get funding and volunteers now. <http://www.ioby.org/>
+Thanks again!
 
-If you have any questions, we'll be standing by at <mailto:ourmiami@miamifoundation.org>.
+—	Your friends at ioby & Livable Memphis
 
-Thanks for your help in making Our Miami better!
 
-Stuart Kennedy
-Senior Programs Officer
-The Miami Foundation
-
-----------
-
-Through the Our Miami initiative, The Miami Foundation fosters community by building attachment to the city, developing public spaces and retaining young talent in Miami. Our Miami uses research from their Soul of the Community Study that clearly shows activating public spaces and attracting young, talented and creative people in Greater Miami will grow the economy faster than other more traditional measures of economic development.
-
-<http://miamifoundation.org>
+P.S. -- If you told us you're committed to making your idea happen, we'll reach out to see what we can do to help you get funding, resources, volunteers and anything else you might need to bring your idea to life. 
