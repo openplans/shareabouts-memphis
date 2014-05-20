@@ -2,7 +2,7 @@
 
   {{#if target.submitter}}
   <li class="activity-item clearfix">
-    <a href="/place/{{ place.id }}{{#is target_type 'comments'}}/response/{{ target.id }}{{/is}}" data-action-type="{{ target_type }}" data-place-id="{{ place.id }}">{{#_}}<strong class="submitter">
+    <a href="/place/{{ place.id }}{{#is target_type 'comments'}}/response/{{ target.id }}{{/is}}" data-action-type="{{ target_type }}" data-place-id="{{ place.id }}"><strong class="submitter">
       <img src="{{ target.submitter.avatar_url }}" class="avatar" /> {{ target.submitter.name }}
     </strong>
     <span class="action">{{ action }}</span>
@@ -10,14 +10,14 @@
     <!-- <br><small>a{{#if place.type_starts_with_vowel }}n{{/if }}
     <span class="place-type">{{ place.place_type_label }}</span>
     idea</small> -->
-    {{/_}}</a>
+    </a>
   </li>
   {{/if}}
 
 {{^}}
 
   <li class="activity-item clearfix">
-    <a href="/place/{{ place.id }}{{#is target_type 'comments'}}/response/{{ target.id }}{{/is}}" data-action-type="{{ target_type }}" data-place-id="{{ place.id }}">{{#_}}<strong class="submitter">
+    <a href="/place/{{ place.id }}{{#is target_type 'comments'}}/response/{{ target.id }}{{/is}}" data-action-type="{{ target_type }}" data-place-id="{{ place.id }}"><strong class="submitter">
     {{#if target.submitter}}
       <img src="{{ target.submitter.avatar_url }}" class="avatar" /> {{ target.submitter.name }}
     {{^}}
@@ -29,7 +29,7 @@
     <!-- ><br><small>a{{#if place.type_starts_with_vowel }}n{{/if }}
     <span class="place-type">{{ place.place_type_label }}</span>
     idea</small>-->
-    {{/_}}</a>
+    </a>
   </li>
 
 {{/ifeq}}

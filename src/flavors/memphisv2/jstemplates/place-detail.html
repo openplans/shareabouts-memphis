@@ -9,7 +9,7 @@
 
             {{#ifeq location_type "new"}}
 
-            {{#_}}<strong class="point-submitter">
+            <strong class="point-submitter">
               {{#if submitter.avatar_url }}
                 <img src="{{ submitter.avatar_url }}" class="avatar" />
               {{^}}
@@ -24,11 +24,11 @@
                   {{ anonymous_name }}
                 {{/if}}
               {{/if}}
-            </strong> {{ action_text }} this.
+            </strong> {{ action_text }} {{#_}}this{{/_}}.
 
             {{#if region}}
               in {{ region }}
-            {{/if}}{{/_}}
+            {{/if}}
 
             <time datetime="{{ created_datetime }}" class="response-date"><a href="/place/{{ id }}">{{ fromnow created_datetime }}</a></time>
 
