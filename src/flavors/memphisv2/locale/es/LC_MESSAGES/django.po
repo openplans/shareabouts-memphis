@@ -1,0 +1,343 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Shareabouts ioby\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-20 16:51-0400\n"
+"PO-Revision-Date: 2014-05-20 20:53+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Spanish (http://www.transifex.com/projects/p/shareabouts-ioby/language/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: jstemplates/place-detail-promotion-bar.html:1
+msgid "Recommend on Facebook"
+msgstr "Recomiéndanos en Facebook"
+
+#: jstemplates/place-detail-promotion-bar.html:2
+msgid "Tweet This"
+msgstr "Twittea esto"
+
+#: jstemplates/place-detail.html:1
+msgid "this"
+msgstr "esto"
+
+#: jstemplates/pages/faq.html:2
+msgid "How is Create Memphis funded?"
+msgstr "¿Cómo se fundó Crea Memphis?"
+
+#: jstemplates/pages/faq.html:3
+msgid "I still have questions. How can I get more information?"
+msgstr "Aún tengo preguntas. ¿Cómo consigo más información?"
+
+#: jstemplates/pages/faq.html:4
+msgid ""
+"Ideas can include anything that you believe would make your neighborhood "
+"stronger, from block beautification projects to leadership training, from "
+"after school programs to new business development. Dream big, but frame your"
+" ideas in small-scale actions at the block or neighborhood level."
+msgstr "Las ideas pueden incluir cualquier cosa que creas que puede hacer que tu barrio mejore, desde proyectos de embellecimientos del bloque hasta formación de liderazgo, desde programas extra-escolares a desarrollo de nuevos negocios. Sueña en grande, pero enmarca tus ideas en acciones a pequeña escala, a nivel de barrio o de bloque."
+
+#: jstemplates/pages/faq.html:5
+msgid ""
+"If you tell us you're committed to making your idea happen, we'll reach out "
+"to see what we can do to help you get funding, resources, volunteers and "
+"anything else you might need to bring your idea to life."
+msgstr "Si nos dices que te comprometes a que tu idea se lleve a cabo, veremos qué podemos hacer para ayudarte a obtener financiación, recursos, voluntarios y cualquier otra cosa que puedas necesitar para que sea posible realizarla."
+
+#: jstemplates/pages/faq.html:6
+msgid ""
+"That means you are willing to step forward and give of your time, talent or "
+"treasure to help turn an idea that you believe in into real change for "
+"Memphis. Ideas need all different kinds of support to become reality, so if "
+"you'd like to be involved — even if you're not sure how yet — let us know! "
+"We'll connect you with the person(s) behind the idea and with the other "
+"Memphians who've also committed to help. It's an easy first step to getting "
+"involved, but you're not on the hook for anything specific. Think of it like"
+" raising your hand when you're moved to join in when someone asks, \"Who's "
+"with me?\""
+msgstr "Esto significa que estás dispuesto a dar un paso adelante y compartir tu tiempo y  para ayudar a convertir una idea en la que crees en un cambio real en Memphis. Las ideas necesitan toda clase  apoyo para hacerse realidad, así que si quieres participar, incluso si aún no estás seguro,¡háznoslo saber! Te pondremos en contacto con las personas que hay detrás de una idea y con los ciudadanos de Memphis que también se han comprometido a ayudar. Es un primer paso fácil  para involucrarse, pero no en nada específico. Piensa que es como si levantaras la mano cuando alguien pregunta \"¿Quién está conmigo\"?"
+
+#: jstemplates/pages/faq.html:7
+msgid ""
+"These are ideas that fellow Memphians are fundraising for on the ioby.org "
+"platform. See one you love? Click through to the ioby campaign page and make"
+" a donation to help make it real! See one that you are interested in being a"
+" part of? Just click the \"Commit to help\" button and we'll put you in "
+"touch."
+msgstr "Estas son las ideas para las que los ciudadanos de Memphis están recaudando fondos desde la plataforma ioby.org. ¿Ves una que te guste? Pues haz clic en la página de la campaña ioby y dona para ayudar a que se haga realidad. ¿Ves una idea en la que te interesa formar parte? Solo haz clic en el botón \"Comprometerse a ayudar\" y nos pondremos en contacto contigo."
+
+#: jstemplates/pages/faq.html:8
+msgid ""
+"These are ideas that fellow Memphians have already begun turning into "
+"reality after successfully raising the funding they needed using the "
+"ioby.org platform. Want to get involved? Just click the \"Commit to help\" "
+"button and we'll connect you."
+msgstr "Estas son las ideas que los ciudadanos de Memphis ya han comenzado a hacer realidad después de conseguir con éxito la recaudación que necesitaban usando la plataforma ioby.org. ¿Quieres formar parte? Solo haz clic en el botón \"Comprometerse a ayudar\" y nosotros te conectaremos."
+
+#: jstemplates/pages/faq.html:9
+msgid ""
+"This is a way to anonymously show your love for great ideas. Feel free to "
+"spread the love around to as many ideas as you like! See one or more you can"
+" really get behind? Why not also click the \"Commit to help\" button and be "
+"a part of making it happen? (see above)"
+msgstr "Ésta es una manera de demostrar, de forma anónima, tu amor por las grandes ideas. Siéntete libre de difundir el amor a tu alrededor con tantas ideas como quieras. Mira una o más que puedas seguir realmente. ¿por qué no darle clic al botón \"Comprometerse a ayudar\" y hacerlo posible? (ver más arriba)"
+
+#: jstemplates/pages/faq.html:10
+msgid ""
+"We are grateful for to have generous support from the Hyde Family Foundation"
+" and the Community Foundation of Greater Memphis. The project was developed "
+"in partnership with Livable Memphis and the Community Development Council to"
+" support creative placemaking in Memphis."
+msgstr "Agradecemos el generoso apoyo de la Hyde Family Foundation y la Community Foundation of Greater Memphis. El proyecto fue desarrollado en asociación con Livable Memphis y the Community Development Council para apoyar la mejora creativa en Memphis."
+
+#: jstemplates/pages/faq.html:11
+msgid ""
+"We have the utmost respect for your privacy. But we also know that an online"
+" platform like this can't get us very far in acting on our great ideas until"
+" we're able to connect with each other as neighbors and citizens. Have a "
+"question or need some assistance when proposing an idea? Let us know and "
+"we'll do the best we can to help you out or connect you with someone who "
+"can. Want to share useful information with the person(s) behind an idea? "
+"Leave a comment sharing your thoughts and we'll connect you. See an idea you"
+" want to be a part of? Click the \"Commit to help\" button and we'll put you"
+" in touch behind the scenes."
+msgstr "Respetamos al máximo tu privacidad. Pero también sabemos que en una plataforma como ésta no podemos llegar muy lejos con nuestras ideas, a no ser que conectemos unos con otros como vecinos y ciudadanos.  ¿Tienes una pregunta o necesitas ayuda al proponer una idea? Háznoslo saber y haremos todo lo posible para ayudarte a conectar con alguien que te ayude. ¿Quieres compartir información útil con gente que tiene una idea? Deja un comentario con tus pensamientos y conectarán contigo. ¿Ves una idea de la que quieres formar parte? Haz clic en el botón \"Comprometerse a ayudar\" y te pondremos manos a la obra."
+
+#: jstemplates/pages/faq.html:12
+msgid "What are the \"seeking funding\" projects?"
+msgstr "¿Qué son los proyectos \"buscando financiación\"?"
+
+#: jstemplates/pages/faq.html:13
+msgid "What are the \"underway\" projects?"
+msgstr "¿Qué son los proyectos \"en marcha\"?"
+
+#: jstemplates/pages/faq.html:14
+msgid "What does it mean to \"Commit\" to a project?"
+msgstr "¿Qué significa \"Comprometerse\" en un proyecto?"
+
+#: jstemplates/pages/faq.html:15
+msgid "What does the \"Support\" button mean?"
+msgstr "¿Qué significa el botón \"Apoyo\" ?"
+
+#: jstemplates/pages/faq.html:16
+msgid "What happens after I post my idea?"
+msgstr "¿Qué ocurre después de que publique mi idea?"
+
+#: jstemplates/pages/faq.html:17
+msgid "What happens if I share my contact information?"
+msgstr "¿Qué ocurre si comparto mi información de contacto?"
+
+#: jstemplates/pages/faq.html:18
+msgid "What kind of ideas can I suggest?"
+msgstr "¿Qué tipo de ideas puedo sugerir?"
+
+#: jstemplates/pages/faq.html:19
+msgid "Who is behind the Create Memphis campaign?"
+msgstr "¿Quién está detrás de la campaña Crea Memphis?"
+
+#: jstemplates/pages/faq.html:20
+msgid "You can email questions to memphis@ioby.org."
+msgstr "Puedes enviar preguntas por correo a memphis@ioby.org"
+
+#: jstemplates/pages/faq.html:21
+msgid ""
+"Your contact information will not be shared, used, or sold for any purposed "
+"other than the Create Memphis campaign. If you are curious, you can see our "
+"privacy policy here:"
+msgstr "Tu información de contacto no será compartida, utilizada o vendida para ningún otro propósito que no sea la campaña Crea Memphis. Si eres curioso puedes ver la política de privacidad aquí:"
+
+#: jstemplates/pages/faq.html:22
+msgid ""
+"ioby and Livable Memphis created this project together to amplify and "
+"support existing work here in Memphis. Since ioby's launch in Memphis, "
+"Memphians have given more than $100,000 to ioby campaigns Memphis "
+"neighborhoods led by people just like you."
+msgstr "ioby y Livable Memphis crearon este proyecto juntos para ampliar y apoyar el trabajo existente aquí en Memphis. Desde el lanzamiento de ioby en Memphis, los ciudadanos han donado más de 100 000 dólares a las campañas de los barrios de Memphis dirigidas por gente como tú."
+
+#: jstemplates/pages/faq.html:23
+msgid ""
+"ioby, which stands for \"in our backyards,\" is designed for Memphians to "
+"lead, develop, fund and bring to life ideas for projects in their own "
+"neighborhoods. The foundational principle of ioby is that leaders should "
+"begin community change by working on their own blocks first."
+msgstr "ioby, que viene de \"en nuestros patios traseros\", está diseñado para que los ciudadanos de Memphis dirijan, desarrollen, financien y llevan a cabo ideas a partir de proyectos en sus propios barrios. El principio fundador de ioby es que los líderes deberían empezar a cambiar la comunidad trabajando primero en su propio bloque."
+
+#: jstemplates/pages/overview.html:1
+msgid ""
+"But we don’t just want ideas. We want citizens to commit to leading projects"
+" to make those ideas reality."
+msgstr "Pero no solo queremos ideas. queremos ciudadanos comprometidos a dirigir proyectos que hagan realidad esas ideas."
+
+#: jstemplates/pages/overview.html:2
+msgid ""
+"Do you want to create a space for neighbors to meet and spend quality time "
+"together? Would better access to healthy foods make your neighborhood "
+"richer? Do your neighbors want the streets to be safer for kids, pedestrians"
+" and cyclists? Would a mural build community and create neighborhood pride? "
+"Do you have an idea to encourage more businesses in your neighborhood? More "
+"trees? Or more friendliness?"
+msgstr "¿Quieres crear un espacio para que los vecinos pasen juntos tiempo de calidad? ¿Sería mejor tu barrio si tuviera un mejor acceso a comida saludable? ¿Quieren tus vecinos que las calles sean más seguras para los niños, peatones y ciclistas? ¿Sería un mural hecho por la comunidad orgullo para el barrio? ¿Tienes la idea de incentivar más negocios en la vecindad? ¿Más árboles? ¿O más amabilidad?"
+
+#: jstemplates/pages/overview.html:3
+msgid ""
+"Start by focusing on your own neighborhood, your community, your block. "
+"Begin by working with your neighbors."
+msgstr "Empieza por concentrarte en tu propio barrio, tu comunidad, tu bloque. Empieza a trabajar con tus vecinos."
+
+#: jstemplates/pages/overview.html:4
+msgid ""
+"This isn’t the first time Memphians have contributed great ideas to make "
+"Memphis even stronger. This tool is designed to build on that energy and "
+"enthusiasm and bring your ideas to life."
+msgstr "No es la primera vez que los ciudadanos de Memphis han contribuido con grandes ideas para hacer la ciudad más fuerte. Esta herramienta se ha diseñado para construir sobre energía y entusiasmo y hacer realidad las ideas."
+
+#: jstemplates/pages/overview.html:5
+msgid ""
+"We all have a secret big idea, an unshakable feeling that we can make a "
+"difference in our own communities, on our block.  So, let’s share our secret"
+" dreams for change and bring them to life, together with our neighbors."
+msgstr "Todos tenemos una idea secreta grande, un sentimiento inquebrantable de que podemos hacer algo diferente en nuestras comunidades, en nuestros bloques, Por lo tanto, vamos a compartir nuestros sueños secretos por el cambio y darles vida, junto con nuestro vecinos."
+
+#: jstemplates/pages/overview.html:6
+msgid ""
+"We’re asking for people with big ideas to start with small steps to get "
+"things started, and make incremental change."
+msgstr "Estamos pidiendo a la gente con grandes ideas que empiecen con pequeños pasos y vayan haciendo los cambios cada vez más grandes."
+
+#: templates/index.html:53
+msgid "Powered by"
+msgstr "Deasarrollado por"
+
+msgid "'Share your idea to create something great for Memphis!'"
+msgstr "\"Comparte tu idea para crear algo grande en Memphis\""
+
+msgid "supported"
+msgstr "apoyado"
+
+msgid "Someone"
+msgstr "alguien"
+
+msgid "support"
+msgstr "apoyo"
+
+msgid "Support"
+msgstr "Apoyo"
+
+msgid "supports"
+msgstr "apoya"
+
+msgid "New ideas"
+msgstr "Nuevas ideas"
+
+msgid "Projects that need funding now"
+msgstr "Proyectos que necesitan financiación ahora"
+
+msgid "Projects underway"
+msgstr "Proyectos en marcha"
+
+msgid "comments"
+msgstr "comentarios"
+
+msgid "commented on"
+msgstr "comentado en"
+
+msgid "Leave a Comment"
+msgstr "Deja un comentario"
+
+msgid "Comment"
+msgstr "Comentario"
+
+msgid "Your name"
+msgstr "Tu nombre"
+
+msgid "Your Email"
+msgstr "Tu correo electrónico"
+
+msgid "comment"
+msgstr "comentario"
+
+msgid "Show on map"
+msgstr "Muestra en el mapa"
+
+msgid "Submit"
+msgstr "Enviar"
+
+msgid "Tell us more..."
+msgstr "Cuéntanos más..."
+
+msgid "Your Name"
+msgstr "Tu nombre"
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "Project Title"
+msgstr "Título del proyecto"
+
+msgid "Add an image!"
+msgstr "Añade una imagen"
+
+msgid "Upload"
+msgstr "Cargar"
+
+msgid "My idea to Create Memphis is..."
+msgstr "Mi idea para Crear Memphis es..."
+
+msgid "The result would be..."
+msgstr "El resultado sería..."
+
+msgid "Phone (optional)"
+msgstr "Teléfono (opcional)"
+
+msgid "Are you committed to helping make this happen?"
+msgstr "¿Te comprometes a llevarlo a cabo?"
+
+msgid "Choose One"
+msgstr "Elige uno"
+
+msgid "Yes"
+msgstr "Sí"
+
+msgid "No"
+msgstr "No"
+
+msgid "Do you live in the neighborhood where you're proposing the idea?"
+msgstr "¿Vives en el barrio dónde estás proponiendo la idea?"
+
+msgid "Do you have any questions about how to turn your idea into reality?"
+msgstr "¿Tienes alguna pregunta sobre cómo hacer realidad tu idea?"
+
+msgid "Add an Idea"
+msgstr "Añade una idea"
+
+msgid "suggested"
+msgstr "sugerido"
+
+msgid "Show as list"
+msgstr "Mostrar como lista"
+
+msgid "About"
+msgstr "Acerca de "
+
+msgid "FAQ"
+msgstr "FAQ"
+
+msgid "Show All"
+msgstr "Muestra todo"
+
+msgid "Seeking funding"
+msgstr "Buscando financiación"
+
+msgid "Underway"
+msgstr "En marcha"
+
+msgid "Filter Ideas"
+msgstr "Filtrar ideas"
