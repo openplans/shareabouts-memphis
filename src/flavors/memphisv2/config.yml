@@ -99,7 +99,7 @@ place:
           value: _(Name)
         - key: size
           value: 30
-    - prompt: _(Project Title)
+    - prompt: _(Give your idea a name)
       type: text
       name: name
       attrs:
