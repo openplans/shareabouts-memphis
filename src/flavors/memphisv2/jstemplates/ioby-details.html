@@ -1,8 +1,19 @@
-  <h5 class="ioby-project-title"><a href="http://ioby.org/"><img src="{{ STATIC_URL }}css/images/ioby-memphis-logo-white.png" class="ioby-logo-small"></a>This project is fundraising on <a href="{{ url }}" target="_blank">ioby.org</a>, a crowdfunding website.</h5>
-  <p class="ioby-funding-info clearfix">
-    <span class="nobreak">Raised: <strong>${{ raised }}</strong></span>
-    <span class="nobreak">Total Needed: <strong>${{ total_needed }}</strong></span>
-  </p>
-  <div class="ioby-project-link-container">
-    <a class="ioby-project-link btn btn-block btn-small" href="{{ url }}" target="_blank">View and pitch in on ioby.org</a>
-  </div>
+{{#ifeq location_type "underway"}}
+<h5 class="ioby-project-title"><a href="http://ioby.org/"><img src="{{ STATIC_URL }}css/images/ioby-memphis-logo-white.png" class="ioby-logo-small"></a>This project has successfully raised funding on ioby and is underway.</h5>
+<p class="ioby-funding-info clearfix">
+  <span class="nobreak">Raised: <strong>${{ raised }}</strong></span>
+  <span class="nobreak">Total Needed: <strong>${{ total_needed }}</strong></span>
+</p>
+<div class="ioby-project-link-container">
+  <a class="ioby-project-link btn btn-block btn-small" href="{{ url }}" target="_blank">Click here to learn more</a>
+</div> 
+  {{^}}
+  <h5 class="ioby-project-title"><a href="http://ioby.org/"><img src="{{ STATIC_URL }}css/images/ioby-memphis-logo-white.png" class="ioby-logo-small"></a>This project is actively fundraising on ioby.</h5>
+   <p class="ioby-funding-info clearfix">
+     <span class="nobreak">Raised: <strong>${{ raised }}</strong></span>
+     <span class="nobreak">Total Needed: <strong>${{ total_needed }}</strong></span>
+   </p>
+   <div class="ioby-project-link-container">
+     <a class="ioby-project-link btn btn-block btn-small" href="{{ url }}" target="_blank">Click here to donate</a>
+   </div>
+  {{/ifeq}}
