@@ -209,7 +209,7 @@ pages:
   - title: _(FAQ)
     slug: faq
     url: faq
-  - title: _(Filter Ideas)
+  - title: _(Filter Ideas ⌄)
     pages:
       - title: _(Show All)
         url: /

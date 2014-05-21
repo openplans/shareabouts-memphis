@@ -576,22 +576,22 @@ button.star.is-full:disabled {
   .access li:nth-child(2) {
     display: block;
   }
-  .access li:hover > ul {
+  .access li:hover > ul,
+  .access li:hover > form > ul {
     background-color: #fff;
     border: 0;
   }
-  .menu-item .menu-item a {
+  .menu-item .menu-item .btn {
     white-space: nowrap;
   }
 
-  .access li ul li a {
+  .access li ul li .btn {
     text-align: left !important;
     line-height: 1.75;
     background-color: #fff !important;
-/*    background-color: rgba(255,255,255,0.5) !important;*/
     color: #001A45 !important;
   }
-  .access li ul li a:hover {
+  .access li ul li .btn:hover {
     background-color: #BB838F !important;
   }
   .access li ul li:nth-child(2) a,
