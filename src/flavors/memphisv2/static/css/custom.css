@@ -306,6 +306,12 @@ a.close-btn {
 /*  padding: 10px;*/
   border-radius: 6px;
 }
+.ioby-funded {
+  background-color: #001A45;
+  margin-bottom: 1.5em;
+/*  padding: 10px;*/
+  border-radius: 6px;
+}
 .ioby-project-title {
   padding: 10px;
   position: relative;
