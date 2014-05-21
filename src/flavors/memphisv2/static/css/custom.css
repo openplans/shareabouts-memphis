@@ -492,13 +492,6 @@ button.star.is-full:disabled {
 
 @media only screen and (min-width: 60em) {
 
-  #site-title {
-    font-size: 1em;
-  }
-  #site-title a:link,
-  #site-title a:visited {
-    line-height: 1.375;
-  }
   #add-place-btn-container {
     background-color: transparent;
     box-shadow: none;
@@ -547,7 +540,6 @@ button.star.is-full:disabled {
     position: absolute;
     right: 2.25em;
     bottom: 0.875em;
-/*    color: #555;*/
     font-size: 0.625em;
     text-transform: uppercase;
     z-index: 1;
@@ -573,6 +565,22 @@ button.star.is-full:disabled {
     border-radius: 0.25em;
   }
 
+  #pages-nav-container,
+  .list-toggle-nav,
+  #language-picker {
+    font-size: 0.625em;
+  }
+  #site-title {
+    font-size: 0.75em;
+  }
+  #site-title a:link,
+  #site-title a:visited {
+    line-height: 1.875;
+  }
+
+  .access {
+    font-size: 1em;
+  }
   .access li:nth-child(2) {
     display: block;
   }
@@ -623,6 +631,24 @@ button.star.is-full:disabled {
     background-color: #004251;
     background-color: rgba(0,66,81,0.7);
     border-color: #004251;
+  }
+
+}
+
+@media only screen and (min-width: 75em) {
+
+  #site-title,
+  #pages-nav-container,
+  .list-toggle-nav,
+  #language-picker {
+    font-size: 0.75em;
+  }
+  #site-title {
+    font-size: 0.875em;
+  }
+  #site-title a:link,
+  #site-title a:visited {
+    line-height: 1.625;
   }
 
 }
