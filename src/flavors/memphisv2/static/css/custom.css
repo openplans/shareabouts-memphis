@@ -305,12 +305,14 @@ a.close-btn {
   margin-bottom: 1.5em;
 /*  padding: 10px;*/
   border-radius: 6px;
+  max-width: 600px;
 }
 .ioby-funded {
   background-color: #001A45;
   margin-bottom: 1.5em;
 /*  padding: 10px;*/
   border-radius: 6px;
+  max-width: 600px;
 }
 .ioby-project-title {
   padding: 10px;
