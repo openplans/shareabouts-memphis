@@ -45,7 +45,7 @@
           </span>
         </header>
         
-        {{#if survey_config}}
+        {{#if survey_config}} <!-- show when not in list view -->
           
           {{#ifeq location_type "underway"}}
           
@@ -68,7 +68,7 @@
         
         {{/if}}
         
-        {{^if survey_config}}
+        {{^if survey_config}}  <!-- show when in list view -->
           {{#ifeq location_type "underway"}}
         
           <div class="ioby-funded"><h5 class="ioby-project-title"><a href="http://ioby.org/"><img src="{{ STATIC_URL }}css/images/ioby-memphis-logo-white.png" class="ioby-logo-small"></a>This project has successfully raised funding on ioby and is underway.</h5>
