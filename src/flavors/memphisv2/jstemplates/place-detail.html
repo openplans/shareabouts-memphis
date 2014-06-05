@@ -44,19 +44,46 @@
 
           </span>
         </header>
-
-        {{#ifeq location_type "underway"}}
         
-        <div class="ioby-funded"><h5 class="ioby-project-title"><a href="http://ioby.org/"><img src="{{ STATIC_URL }}css/images/ioby-memphis-logo-white.png" class="ioby-logo-small"></a>This project has successfully raised funding on ioby and is underway.</h5>
-        <div class="ioby-project-link-container">
-          <a class="ioby-project-link btn btn-block btn-small" href="http://ioby.org/node/{{ ioby_id }}" target="_blank">Click here to learn more</a>
-        </div>
-        </div>   
-        {{^}}
+        {{#if survey_config}} <!-- show when not in list view -->
+          
+          {{#ifeq location_type "underway"}}
+          
+          <div class="ioby-funded"><h5 class="ioby-project-title"><a href="http://ioby.org/"><img src="{{ STATIC_URL }}css/images/ioby-memphis-logo-white.png" class="ioby-logo-small"></a>This project has successfully raised funding on ioby and is underway.</h5>
+          <div class="ioby-project-link-container">
+            <a class="ioby-project-link btn btn-block btn-small" href="http://ioby.org/node/{{ ioby_id }}" target="_blank">Click here to learn more</a>
+          </div>
+          </div>
+          
+          {{/ifeq}}
+          
+          {{#ifeq location_type "funding"}}
+          <div class="ioby-details"></div>
+          {{/ifeq}}
         
-        <div class="ioby-details"></div>
-
-        {{/ifeq}}
+        {{/if}}
+        
+        {{^if survey_config}}  <!-- show when in list view -->
+          {{#ifeq location_type "underway"}}
+        
+          <div class="ioby-funded">
+            <h5 class="ioby-project-title"><a href="http://ioby.org/"><img src="{{ STATIC_URL }}css/images/ioby-memphis-logo-white.png" class="ioby-logo-small"></a>This project has successfully raised funding on ioby and is underway.</h5>
+          <div class="ioby-project-link-container">
+            <a class="ioby-project-link btn btn-block btn-small" href="http://ioby.org/node/{{ ioby_id }}" target="_blank">Click here to learn more</a>
+          </div>
+          </div>   
+           {{/ifeq}}
+          
+           {{#ifeq location_type "funding"}}
+          <div class="ioby-funded">
+          <h5 class="ioby-project-title"><a href="http://ioby.org/"><img src="{{ STATIC_URL }}css/images/ioby-memphis-logo-white.png" class="ioby-logo-small"></a>This project is actively fundraising on ioby!</h5>
+           <div class="ioby-project-link-container">
+             <a class="ioby-project-link btn btn-block btn-small" href="http://ioby.org/node/{{ ioby_id }}" target="_blank">Click here to donate</a>
+           </div>
+           </div>
+          {{/ifeq}}
+        
+        {{/if}}
         
         <section class="place-items">
           {{# attachments }}

@@ -305,12 +305,14 @@ a.close-btn {
   margin-bottom: 1.5em;
 /*  padding: 10px;*/
   border-radius: 6px;
+  max-width: 600px;
 }
 .ioby-funded {
   background-color: #001A45;
   margin-bottom: 1.5em;
 /*  padding: 10px;*/
   border-radius: 6px;
+  max-width: 600px;
 }
 .ioby-project-title {
   padding: 10px;
@@ -594,6 +596,7 @@ button.star.is-full:disabled {
   .access li:hover > form > ul {
     background-color: #fff;
     border: 0;
+    min-width: 13em;
   }
   .menu-item .menu-item .btn {
     white-space: nowrap;
