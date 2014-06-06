@@ -69,6 +69,23 @@ place_types:
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
+  umapit:
+    label: _(U-Map-It)
+    rules:
+      - condition: '"{{location_type}}" === "umapit" && {{layer.focused}} === false'
+        style:
+          color: '#565EAA'
+          radius: 8
+          weight: 3
+          opacity: 0.9
+          fillOpacity: 0.7
+      - condition: '"{{location_type}}" === "umapit" && {{layer.focused}} === true'
+        icon:
+          iconUrl: /static/css/images/markers/marker-blue-violet.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
 
 activity:
   enabled: true
