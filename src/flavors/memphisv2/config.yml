@@ -2,6 +2,7 @@ app:
   title: Create Memphis
   name: Create Memphis
   meta_description: _('Share your idea to create something great for Memphis!')
+  meta_author: ioby
 
 map:
   geolocation_enabled: true
