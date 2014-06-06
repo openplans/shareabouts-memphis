@@ -1,10 +1,12 @@
-{{#if ff}}
-<p><strong>This project is a 2014 Public Space Challenge finalist!</strong></p>
-{{/if}}
         {{> place-detail-promotion-bar }}
 
         <header class="place-header clearfix">
-          <h1>{{ name }}</h1>
+          <h1>{{name}}
+            {{#if umapit-name }} 
+            {{ umapit-name }}
+            {{^}}
+            {{ umapit-description }}
+            {{/if}}</h1>
           <span class="place-submission-details">
 
             {{#ifeq location_type "new"}}
@@ -57,6 +59,7 @@
           
           {{/ifeq}}
           
+          
           {{#ifeq location_type "funding"}}
           <div class="ioby-details"></div>
           {{/ifeq}}
@@ -92,6 +95,13 @@
           </div>
           {{/ attachments }}
 
+          {{#if umapit-description }}
+          <p>{{ umapit-description }}</p>
+          {{#if umapit-close }}<p>Location: {{ umapit-close }}</p>{{/if}}
+          <p><em>Someone proposed this idea during the "U-Map-It" campaign run by Mid-South Regional Greenprint &amp; Sustainability Plan. Interested in seeing it become reality? Just click the commit to help button and we'll be in touch with you.</em></p>
+
+          {{/if}}
+          
           {{#if idea-description }}
           <p><strong>My idea to Create Memphis is...</strong><br/>{{ newLineToBr idea-description }}</p>
           {{/if}}
