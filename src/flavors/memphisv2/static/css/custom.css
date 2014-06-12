@@ -202,6 +202,9 @@ textarea:focus {
   display: none;
 }
 
+.menu li:last-child {
+  display: none;
+}
 
 /* =The Ticker
 -------------------------------------------------------------- */
