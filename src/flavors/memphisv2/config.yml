@@ -241,9 +241,6 @@ pages:
       - title: _(Underway)
         url: /filter/underway
         external: true
-      - title: _(Underway)
-        url: /filter/underway
-        external: true
   - title: _(Ready to Donate?)
     name: features
     slug: donate
