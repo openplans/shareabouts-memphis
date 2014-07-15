@@ -198,6 +198,11 @@ textarea:focus {
   display: none;
 }
 
+#pages-nav-container .menu > li:last-child {
+  display: none;
+}
+
+
 /* =The Ticker
 -------------------------------------------------------------- */
 
