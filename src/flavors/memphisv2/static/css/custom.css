@@ -198,11 +198,7 @@ textarea:focus {
   display: none;
 }
 
-.access li:nth-child(2) {
-  display: none;
-}
-
-.menu li:last-child {
+#pages-nav-container .menu > li:last-child {
   display: none;
 }
 
