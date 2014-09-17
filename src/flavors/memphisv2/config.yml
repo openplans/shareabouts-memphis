@@ -22,7 +22,28 @@ place_types:
   new:
     label: _(New ideas)
     rules:
-      - condition: '"{{location_type}}" === "new" && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "new" && {{layer.focused}} === false && {{map.zoom}} < 12'
+        style:
+          color: '#565EAA'
+          radius: 2
+          weight: 0.5
+          opacity: 0.9
+          fillOpacity: 0.7
+      - condition: '"{{location_type}}" === "new" && {{layer.focused}} === false && {{map.zoom}} >= 12 && {{map.zoom}} < 14'
+        style:
+          color: '#565EAA'
+          radius: 3
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+      - condition: '"{{location_type}}" === "new" && {{layer.focused}} === false && {{map.zoom}} >= 14 && {{map.zoom}} < 16'
+        style:
+          color: '#565EAA'
+          radius: 4
+          weight: 2
+          opacity: 0.9
+          fillOpacity: 0.7
+      - condition: '"{{location_type}}" === "new" && {{layer.focused}} === false && {{map.zoom}} >= 16'
         style:
           color: '#565EAA'
           radius: 8
@@ -39,7 +60,28 @@ place_types:
   funding:
     label: _(Projects that need funding now)
     rules:
-      - condition: '"{{location_type}}" === "funding" && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "funding" && {{layer.focused}} === false && {{map.zoom}} < 12'
+        style:
+          color: '#562700'
+          radius: 2
+          weight: 0.5
+          opacity: 0.9
+          fillOpacity: 0.7
+      - condition: '"{{location_type}}" === "funding" && {{layer.focused}} === false && {{map.zoom}} >= 12 && {{map.zoom}} < 14'
+        style:
+          color: '#562700'
+          radius: 3
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+      - condition: '"{{location_type}}" === "funding" && {{layer.focused}} === false && {{map.zoom}} >= 14 && {{map.zoom}} < 16'
+        style:
+          color: '#562700'
+          radius: 4
+          weight: 2
+          opacity: 0.9
+          fillOpacity: 0.7
+      - condition: '"{{location_type}}" === "funding" && {{layer.focused}} === false && {{map.zoom}} >= 16'
         style:
           color: '#562700'
           radius: 8
@@ -56,7 +98,28 @@ place_types:
   underway:
     label: _(Projects underway)
     rules:
-      - condition: '"{{location_type}}" === "underway" && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "underway" && {{layer.focused}} === false && {{map.zoom}} < 12'
+        style:
+          color: '#004251'
+          radius: 2
+          weight: 0.5
+          opacity: 0.9
+          fillOpacity: 0.7
+      - condition: '"{{location_type}}" === "underway" && {{layer.focused}} === false && {{map.zoom}} >= 12 && {{map.zoom}} < 14'
+        style:
+          color: '#004251'
+          radius: 3
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+      - condition: '"{{location_type}}" === "underway" && {{layer.focused}} === false && {{map.zoom}} >= 14 && {{map.zoom}} < 16'
+        style:
+          color: '#004251'
+          radius: 4
+          weight: 2
+          opacity: 0.9
+          fillOpacity: 0.7
+      - condition: '"{{location_type}}" === "underway" && {{layer.focused}} === false && {{map.zoom}} >= 16'
         style:
           color: '#004251'
           radius: 8
@@ -73,7 +136,28 @@ place_types:
   umapit:
     label: _(U-Map-It)
     rules:
-      - condition: '"{{location_type}}" === "umapit" && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "umapit" && {{layer.focused}} === false && {{map.zoom}} < 12'
+        style:
+          color: '#565EAA'
+          radius: 2
+          weight: 0.5
+          opacity: 0.9
+          fillOpacity: 0.7
+      - condition: '"{{location_type}}" === "umapit" && {{layer.focused}} === false && {{map.zoom}} >= 12 && {{map.zoom}} < 14'
+        style:
+          color: '#565EAA'
+          radius: 3
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+      - condition: '"{{location_type}}" === "umapit" && {{layer.focused}} === false && {{map.zoom}} >= 14 && {{map.zoom}} < 16'
+        style:
+          color: '#565EAA'
+          radius: 4
+          weight: 2
+          opacity: 0.9
+          fillOpacity: 0.7
+      - condition: '"{{location_type}}" === "umapit" && {{layer.focused}} === false && {{map.zoom}} >= 16'
         style:
           color: '#565EAA'
           radius: 8
